@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Test</title>
+		<style type="text/css">
+			body {
+				background-color: #ffffff;
+			}
+			p {
+				font-size: 50px;
+				font-family: sans-serif;
+
+				text-align: center;
+
+				color: black;
+				background-color: #bbbbbb;
+			}	
+			/* Make so text doesn't wrap */
+			div > p {
+				white-space: nowrap;
+			}	
+			/* Style the list */
+			ul#tab {
+				position: relative;
+
+				list-style-type: none;
+
+				margin: 0 auto;
+
+				width: 315.6px;
+
+				padding: 5px;
+
+				overflow: auto;
+
+				border: 2px solid #ccc;
+				border-radius: 2px;
+			}		
+			/* Float the list items side by side */
+			ul#tab li {
+				float: left;
+			}
+			/* Style the links inside the list items */
+			ul#tab li a {
+				display: inline-block;
+
+				color: black;
+
+				padding: 14px 14px;
+
+				text-decoration: none;
+
+				transition: 0.3s;
+
+				font-size: 17px;
+
+				background-color: transparent;
+				background-size: 70px 70px;
+				background-repeat: no-repeat;
+				background-position: center;
+
+				border: 2px solid #ffffff;
+				border-radius: 2px;
+
+				margin-left: 2px;
+				margin-right: 2px;
+
+				width: 70px;
+				height: 70px;
+			}
+			/* Button backgrounds */
+			a#AndroidButton {
+				background: url("http://ryanairth.weebly.com/files/theme/Logos_Android.png");
+			}
+			a#JavaButton {
+				background: url("http://ryanairth.weebly.com/files/theme/Logos_Java.png");
+			}
+			a#CPlusPlusButton {
+				background: url("http://ryanairth.weebly.com/files/theme/Logos_CPlusPlus.png")
+			}
+			/* Change the background color of links on hover */
+			ul#tab li a:hover {
+				background-color: transparent;
+				border-color: #ddd;
+			}
+
+			/* Create an active.current tablink class */
+			ul#tab li a:focus, .active {
+				/* border: 2px solid #ffffff; */
+				border-color: #aaa;
+				background-color: transparent;
+			}
+			/* Remove padding from it being an unordered list */
+			ul#contentSlider {
+				padding: 0;
+				margin: auto;
+				width: 200%;
+			}
+			/* Make so content can appear next to each other */
+			ul#contentSlider li {
+				float: left;
+			}
+			/* General style for the content container */
+			#contentContainer {
+				display: none;
+
+				padding: 6px 6px;
+
+				border: 2px solid #ccc;
+				border-radius: 2px;
+
+				margin-top: -1.5px;
+
+				overflow: hidden;
+
+				opacity: 0;
+			}
+			/* General style for the content */
+			.tabContent {
+				margin: auto;
+
+				padding: 0;
+
+				width: 50%;
+			}
+			#temp {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<p>Project Selector</p>
+
+		<!-- Buttons to choose which content to view -->
+		<ul id="tab">
+			<li >
+				<a href="#" id="AndroidButton" class="tabLinks" onclick="openProjectLanguage(event, 'Android')"></a>
+			</li>
+			<li >
+				<a href="#" id="JavaButton" class="tabLinks" onclick="openProjectLanguage(event, 'Java')"></a>
+			</li>
+			<li >
+				<a href="#" id="CPlusPlusButton" class="tabLinks" onclick="openProjectLanguage(event, 'CPlusPlus')"></a>
+			</li>
+		</ul>
+		
+		<!-- Container for the main content -->
+		<div id="contentContainer">
+			<ul id="contentSlider">
+				<!-- List items that contain the main content for the page -->
+			</ul>
+		</div>
+
+		<div id="temp">
+			<li id="Android" class="tabContent">
+				<p>Insert Android projects here</p>
+			</li>
+			<li id="Java" class="tabContent">
+				<p>Insert Java projects here</p>
+			</li>
+			<li id="CPlusPlus" class="tabContent">
+				<p>Insert C++ projects here</p>
+			</li>
+		</div>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+
+		<script type="text/javascript">
+			var tabOpen = false;
+
+			var lastContentTab;
+
+			var tempLocation = $("#temp");
+
+			function resetLocation(element, location) {
+				TweenMax.to(element, 0, {x:(location), opacity:1});
+			}
+
+			function openProjectLanguage(event, languageName) {
+				event.preventDefault();
+
+				// Declare all variables
+				var tabContent, tabLinks, projects, contentContainer, contentSlider;
+
+				/**************************************************************
+										Visibilty
+				***************************************************************/
+				// Get all elements with class="tabContent" and hide them
+				tabContent = $(".tabContent");
+				tabContent.css("display", "none");
+				// Get all elements with class="tabLinks" and remove the class "active"
+				tabLinks = $(".tabLinks");
+				tabLinks.attr("class").replace(" active", "");
+				// Add the "active" class to the link that opened the tab
+				event.currentTarget.className += " active";
+				// Unhide contentContainer
+				contentContainer = $("#contentContainer");
+				contentContainer.css("display", "block");
+
+				/**************************************************************
+									Experimental Animation
+				***************************************************************/
+				
+				var currentLanguageDOM = $("#" + languageName);
+				currentLanguageDOM.css("display", "block");
+
+				var contentSlider =	$("#contentSlider");
+				currentLanguageDOM.appendTo(contentSlider);
+				
+				var timeline = new TimelineMax();
+
+				var resetAmount = "1%";
+
+				if(tabOpen) {
+					if(lastContentTab.attr("id") != currentLanguageDOM.attr("id")) {
+						lastContentTab.css("display", "block");
+
+						console.log(lastContentTab.attr("id") + ", " + currentLanguageDOM.attr("id"));
+
+						timeline.add(TweenMax.to(lastContentTab, 2, {x:"-101%", opacity:0, ease:Back.easeIn, onComplete:function() {
+							lastContentTab.css("display", "none");
+
+							lastContentTab.appendTo(tempLocation);
+
+							resetLocation(lastContentTab, resetAmount);
+
+							lastContentTab = currentLanguageDOM;
+						}}));
+
+						var subTimeline = new TimelineMax();
+
+						TweenMax.to(currentLanguageDOM, 0, {paddingleft: "6px", paddingright: "6px"});
+
+						subTimeline.add(TweenMax.to(currentLanguageDOM, 2, {x:"-101%", ease:Back.easeIn, onComplete:function() {
+
+							TweenMax.to(currentLanguageDOM, 0, {x:"0%"});
+						}}));
+
+						timeline.add(subTimeline, "-=2");
+					}
+				} else {
+					$(".tabContent").each(function() {
+						resetLocation(this, resetAmount);
+					});
+					resetLocation(currentLanguageDOM, "100%");
+
+					timeline.add(TweenMax.to(contentContainer, 2, {height:"100%", ease:Bounce.easeOut, opacity:1}));
+
+					tabOpen = true;
+
+					var subTimeline = new TimelineMax();
+
+					subTimeline.add(TweenMax.to(currentLanguageDOM, 2, {x:"0%", ease:Back.easeOut, onComplete:function() {
+
+						lastContentTab = currentLanguageDOM;
+					}}));
+
+					timeline.add(subTimeline, "-=1.5");
+				}	
+			}
+		</script>
+	</body>
+</html>

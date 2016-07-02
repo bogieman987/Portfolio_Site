@@ -1,0 +1,3 @@
+var blurElements = function(elementAbove, elements) {
+	var elementAboveRect = elementAbove.getBoundingClientRect();
+}

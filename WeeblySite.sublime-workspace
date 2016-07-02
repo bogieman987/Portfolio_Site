@@ -1,0 +1,601 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"eleme",
+				"element"
+			],
+			[
+				"re",
+				"remove"
+			],
+			[
+				"last",
+				"lastContentTab"
+			],
+			[
+				"con",
+				"contentSlider"
+			],
+			[
+				"curre",
+				"currentLanguageDOM"
+			],
+			[
+				"no",
+				"none"
+			],
+			[
+				"b",
+				"block"
+			],
+			[
+				"co",
+				"contentSlider"
+			],
+			[
+				"las",
+				"lastContentTab"
+			],
+			[
+				"tra",
+				"transition"
+			],
+			[
+				"conte",
+				"contentSlider"
+			],
+			[
+				"active",
+				"activeContentPages"
+			],
+			[
+				"Cu",
+				"currentLanguageDOM"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"pre",
+				"previousContentTab"
+			],
+			[
+				"d",
+				"display"
+			],
+			[
+				"cont",
+				"contentTimeline"
+			],
+			[
+				"conetn",
+				"contentTimeline"
+			],
+			[
+				"timel",
+				"timeline"
+			],
+			[
+				"ba",
+				"background-position"
+			],
+			[
+				"bor",
+				"border-radius"
+			],
+			[
+				"cu",
+				"currentLanguageDOM"
+			],
+			[
+				"ease",
+				"easeOut"
+			],
+			[
+				"di",
+				"div	Tag"
+			],
+			[
+				"and",
+				"Logos_Android"
+			],
+			[
+				"marg",
+				"margin"
+			],
+			[
+				"op",
+				"opacity"
+			],
+			[
+				"tran",
+				"transform"
+			],
+			[
+				"l",
+				"languageName"
+			],
+			[
+				"sli",
+				"slideOutLeft"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"tab",
+				"tabContent"
+			],
+			[
+				"tr",
+				"true"
+			],
+			[
+				"clsas",
+				"className"
+			],
+			[
+				"do",
+				"document"
+			],
+			[
+				"dor",
+				"dropDownAnim"
+			],
+			[
+				"drop",
+				"dropDownAnim"
+			],
+			[
+				"getE",
+				"getElementById"
+			],
+			[
+				"dr",
+				"dropDownAnim"
+			],
+			[
+				"fo",
+				"for	for (…) {…} (Improved Native For-Loop)"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"pr",
+				"projects"
+			],
+			[
+				"cl",
+				"className"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"cur",
+				"currentTab"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"border",
+				"border"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"inlin",
+				"inline-block"
+			],
+			[
+				"over",
+				"overflow"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"list",
+				"list-style-type"
+			],
+			[
+				"p",
+				"p	Tag"
+			],
+			[
+				"align",
+				"align-content"
+			],
+			[
+				"rgb",
+				"rgb()"
+			],
+			[
+				"border-col",
+				"border-color"
+			],
+			[
+				"ov",
+				"overflow-y"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"font",
+				"font-family"
+			],
+			[
+				"al",
+				"align-self"
+			],
+			[
+				"border-r",
+				"border-radius"
+			],
+			[
+				"element",
+				"elementAbove"
+			],
+			[
+				"bore",
+				"bordered-box"
+			],
+			[
+				"pa",
+				"padding-right"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"h",
+				"hidden"
+			],
+			[
+				"overf",
+				"overflow-y"
+			],
+			[
+				"z",
+				"z-index"
+			],
+			[
+				"s",
+				"sans-serif"
+			],
+			[
+				"move",
+				"moveTextBox"
+			],
+			[
+				"mouse",
+				"mousemove"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"a",
+				"auto"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Projects.html",
+			"settings":
+			{
+				"buffer_size": 6594,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Blur.html",
+			"settings":
+			{
+				"buffer_size": 2512,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "var blurElements = function(elementAbove, elements) {\n	var elementAboveRect = elementAbove.getBoundingClientRect();\n\n	\n}",
+			"file": "scripts/BlurElements",
+			"file_size": 119,
+			"file_write_time": 131113650189888174,
+			"settings":
+			{
+				"buffer_size": 120,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 446.0,
+		"last_filter": "pack",
+		"selected_items":
+		[
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"p",
+				"Set Syntax: HTML (ASP)"
+			]
+		],
+		"width": 549.0
+	},
+	"console":
+	{
+		"height": 162.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/Programming/Web/WeeblySite/Projects.html",
+		"/D/Programming/Web/WeeblySite/Blur.html",
+		"/C/Users/ryan2/Desktop/Test",
+		"/C/Users/ryan2/Desktop/WeeblySite"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"contentSlider",
+			"160px",
+			"slideLeft",
+			"moveLeft",
+			"tabContentContainer",
+			"tabcontentContainer",
+			"container",
+			"tablinks",
+			"					\n",
+			"tabcontent"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"$contentSlider",
+			"slideInLeft",
+			"moveInLeft",
+			"tabContainer",
+			"tabContentContainer",
+			"contentContainer",
+			"tabLinks"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Projects.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6594,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2809,
+								2809
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2268.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Blur.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2512,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								245,
+								245
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 36.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "scripts/BlurElements",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 120,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								118,
+								118
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "WeeblySite.sublime-project",
+	"replace":
+	{
+		"height": 80.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 188.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
