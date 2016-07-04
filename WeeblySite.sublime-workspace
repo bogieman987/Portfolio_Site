@@ -303,26 +303,15 @@
 			"file": "Projects.html",
 			"settings":
 			{
-				"buffer_size": 6594,
+				"buffer_size": 3697,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "Blur.html",
+			"file": "scripts/ProgrammingProjectSelector.js",
 			"settings":
 			{
-				"buffer_size": 2512,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "var blurElements = function(elementAbove, elements) {\n	var elementAboveRect = elementAbove.getBoundingClientRect();\n\n	\n}",
-			"file": "scripts/BlurElements",
-			"file_size": 119,
-			"file_write_time": 131113650189888174,
-			"settings":
-			{
-				"buffer_size": 120,
+				"buffer_size": 2673,
 				"line_ending": "Windows"
 			}
 		}
@@ -368,8 +357,9 @@
 	},
 	"file_history":
 	[
-		"/D/Programming/Web/WeeblySite/Projects.html",
+		"/D/Programming/Web/WeeblySite/scripts/BlurElements",
 		"/D/Programming/Web/WeeblySite/Blur.html",
+		"/D/Programming/Web/WeeblySite/Projects.html",
 		"/C/Users/ryan2/Desktop/Test",
 		"/C/Users/ryan2/Desktop/WeeblySite"
 	],
@@ -423,7 +413,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -432,15 +422,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6594,
+						"buffer_size": 3697,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2809,
-								2809
+								982,
+								982
 							]
 						],
 						"settings":
@@ -449,68 +439,39 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2268.0,
+						"translation.y": 936.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "Blur.html",
+					"file": "scripts/ProgrammingProjectSelector.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2512,
+						"buffer_size": 2673,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								245,
-								245
+								489,
+								489
 							]
 						],
 						"settings":
 						{
-							"history_list_is_closing": true,
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 36.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "scripts/BlurElements",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 120,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								118,
-								118
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -555,7 +516,7 @@
 	"project": "WeeblySite.sublime-project",
 	"replace":
 	{
-		"height": 80.0
+		"height": 50.0
 	},
 	"save_all_on_build": true,
 	"select_file":

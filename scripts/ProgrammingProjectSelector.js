@@ -1,66 +1,85 @@
-var tabOpen = false;
+var tabOpen = false,
+	lastContentTab,
+	tempLocation = $("#temp");
 
-var previousContentTab;
+function resetLocation(element, location) {
+	TweenMax.to(element, 0, {x:(location), opacity:1});
+}
 
 function openProjectLanguage(event, languageName) {
+	event.preventDefault();
+
 	// Declare all variables
-	var tabContent, tabLinks, projects, contentContainer;
+	var tabContent, tabLinks, projects, contentContainer, contentSlider;
 
 	/**************************************************************
 							Visibilty
 	***************************************************************/
 	// Get all elements with class="tabContent" and hide them
-	tabContent = document.getElementsByClassName("tabContent");
-	for (var i = 0; i < tabContent.length; i++) {
-		tabContent[i].style.display = "none";
-	}
-
+	tabContent = $(".tabContent");
+	tabContent.css("display", "none");
 	// Get all elements with class="tabLinks" and remove the class "active"
-	tabLinks = document.getElementsByClassName("tabLinks");
-	for (var i = 0; i < tabLinks.length; i++) {
-		tabLinks[i].className = tabLinks[i].className.replace(" active", "");
-	}
+	tabLinks = $(".tabLinks");
+	tabLinks.attr("class").replace(" active", "");
 	// Add the "active" class to the link that opened the tab
 	event.currentTarget.className += " active";
 	// Unhide contentContainer
-	contentContainer = document.getElementById("contentContainer");
-	contentContainer.style.display = "block";
+	contentContainer = $("#contentContainer");
+	contentContainer.css("display", "block");
 
 	/**************************************************************
-							Animation
+						Experimental Animation
 	***************************************************************/
+	
+	var currentLanguageDOM = $("#" + languageName),
+		contentSlider =	$("#contentSlider"),
+		timeline = new TimelineMax(),
+		subTimeline = new TimelineMax(),
+		resetAmount = "1%";
 
-	if(!tabOpen && !(contentContainer.className.indexOf(" dropDownAnim") > -1)) {
-		contentContainer.className += " dropDownAnim";
+	currentLanguageDOM.css("display", "block");
+	currentLanguageDOM.appendTo(contentSlider);
+	
+	if(tabOpen) {
+		if(lastContentTab.attr("id") != currentLanguageDOM.attr("id")) {
+			lastContentTab.css("display", "block");
+
+			console.log(lastContentTab.attr("id") + ", " + currentLanguageDOM.attr("id"));
+
+			timeline.add(TweenMax.to(lastContentTab, 2, {x:"-101%", opacity:0, ease:Back.easeIn, onComplete:function() {
+				lastContentTab.css("display", "none");
+
+				lastContentTab.appendTo(tempLocation);
+
+				resetLocation(lastContentTab, resetAmount);
+
+				lastContentTab = currentLanguageDOM;
+			}}));
+
+			TweenMax.to(currentLanguageDOM, 0, {paddingleft: "6px", paddingright: "6px"});
+
+			subTimeline.add(TweenMax.to(currentLanguageDOM, 2, {x:"-101%", ease:Back.easeIn, onComplete:function() {
+
+				TweenMax.to(currentLanguageDOM, 0, {x:"0%"});
+			}}));
+
+			timeline.add(subTimeline, "-=2");
+		}
+	} else {
+		$(".tabContent").each(function() {
+			resetLocation(this, resetAmount);
+		});
+		resetLocation(currentLanguageDOM, "100%");
+
+		timeline.add(TweenMax.to(contentContainer, 2, {height:"100%", ease:Bounce.easeOut, opacity:1}));
 
 		tabOpen = true;
-	}
 
-	if(tabOpen) {
-		// Remove all instances of slideInLeft
-		for (var i = 0; i < tabContent.length; i++) {
-			tabContent[i].className = tabContent[i].className.replace(" slideInLeft", "");
-			tabContent[i].className = tabContent[i].className.replace(" slideOutLeft", "");
-		}
+		subTimeline.add(TweenMax.to(currentLanguageDOM, 2, {x:"0%", ease:Back.easeOut, onComplete:function() {
 
-		if(previousContentTab != null) {
-			//previousContentTab.style.display = "block";
-			//previousContentTab.className += " slideOutLeft";
-		}
-		
-		// TODO - Might have to use absolute positioning, or relative perhaps
-		document.getElementById(languageName).style.display = "block";
-		document.getElementById(languageName).className += " slideInLeft";
+			lastContentTab = currentLanguageDOM;
+		}}));
 
-		previousContentTab = document.getElementById(languageName);
-
-		// Logging
-		console.log("tabContent length: " + tabContent.length);
-
-		for (var i = 0; i < tabContent.length; i++) {
-			console.log("tabContent: " + tabContent[i].id + ", classes: " + tabContent[i].className);
-		}
-
-		console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-	}				
+		timeline.add(subTimeline, "-=1.5");
+	}	
 }
