@@ -5,7 +5,7 @@
 		<title>Test</title>
 		<style type="text/css">
 			body {
-				background-color: #ffffff;
+				background: #ffffff;
 			}
 			h1 {
 				font-size: 50px;
@@ -17,10 +17,23 @@
 				background-color: #bbbbbb;
 				padding-bottom: 2px;
 			}	
+			#brain {
+				position: relative;
+				left: 20%;
+				width: 60%;
+			}
 			/* Make so text doesn't wrap */
-			div > p {
-				/* white-space: nowrap; */
+			p {
+				margin: 0;
+				padding: 0;
 			}	
+			.mainContainer {
+				margin: 0 auto;
+				width: 840px;
+			}
+			.subContainer {
+				height: 900px;
+			}
 			/* Style the list */
 			ul#tab {
 				position: relative;
@@ -37,6 +50,8 @@
 
 				border: 2px solid #ccc;
 				border-radius: 2px;
+
+				float: left;
 			}		
 			/* Float the list items side by side */
 			ul#tab li {
@@ -71,13 +86,13 @@
 			}
 			/* Button backgrounds */
 			a#AndroidButton {
-				background: url("http://ryanairth.weebly.com/files/theme/Logos_Android.png");
+				background: url("images/Logos_Android.png");
 			}
 			a#JavaButton {
-				background: url("http://ryanairth.weebly.com/files/theme/Logos_Java.png");
+				background: url("images/Logos_Java.png");
 			}
 			a#CPlusPlusButton {
-				background: url("http://ryanairth.weebly.com/files/theme/Logos_CPlusPlus.png")
+				background: url("images/Logos_CPlusPlus.png");
 			}
 			/* Change the background color of links on hover */
 			ul#tab li a:hover {
@@ -127,46 +142,72 @@
 			#temp {
 				display: none;
 			}
+			#projectSelector {
+				max-height: 117.8px;
+				overflow: hidden;
+			}
+			#text {
+				padding: 5px 5px 5px 20px;
+				width: 400px;
+				overflow: hidden;
+				margin: auto 0;
+			}
 		</style>
 	</head>
 	<body onload="addLoremIpsum('tabContent')">
-		<h1>Project Selector</h1>
+		<div class="mainContainer">
+			<div class="subContainer">
+				<img id="brain" src="images/Brain.svg" alt="Picture of brain">
+				<h1>About</h1>
 
-		<!-- Buttons to choose which content to view -->
-		<ul id="tab">
-			<li >
-				<a href="#" id="AndroidButton" class="tabLinks" onclick="openProjectLanguage(event, 'Android')"></a>
-			</li>
-			<li >
-				<a href="#" id="JavaButton" class="tabLinks" onclick="openProjectLanguage(event, 'Java')"></a>
-			</li>
-			<li >
-				<a href="#" id="CPlusPlusButton" class="tabLinks" onclick="openProjectLanguage(event, 'CPlusPlus')"></a>
-			</li>
-		</ul>
-		
-		<!-- Container for the main content -->
-		<div id="contentContainer">
-			<ul id="contentSlider">
-				<!-- List items that contain the main content for the page -->
-			</ul>
-		</div>
+			</div>
+			<div class="subContainer">
+				<h1>Project Selector</h1>
 
-		<div id="temp">
-			<li id="Android" class="tabContent">
-				<h1>Insert Android projects here</h1>
-			</li>
-			<li id="Java" class="tabContent">
-				<h1>Insert Java projects here</h1>
-			</li>
-			<li id="CPlusPlus" class="tabContent">
-				<h1>Insert C++ projects here</h1>
-			</li>
+				<!-- Buttons to choose which content to view -->
+				<div id="projectSelector">
+					<ul id="tab">
+						<li >
+							<a href="#" id="AndroidButton" class="tabLinks" onclick="openProjectLanguage(event, 'Android')"></a>
+						</li>
+						<li >
+							<a href="#" id="JavaButton" class="tabLinks" onclick="openProjectLanguage(event, 'Java')"></a>
+						</li>
+						<li >
+							<a href="#" id="CPlusPlusButton" class="tabLinks" onclick="openProjectLanguage(event, 'CPlusPlus')"></a>
+						</li>
+					</ul>
+
+					<div id="text">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod venenatis elit eget ornare. Ut pellentesque feugiat massa, et sodales ante pretium eu. Aliquam quis auctor mauris, suscipit viverra odio. Quisque cursus justo mauris, vehicula egestas turpis interdum ut. Praesent eu ligula cursus, rhoncus nibh sed, pharetra augue. Etiam feugiat molestie nulla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris commodo accumsan augue, eget gravida mauris pellentesque at. Quisque luctus faucibus neque sed viverra. Sed quam odio, lobortis eu ante nec, volutpat porta arcu. </p>
+					</div>
+				</div>
+				
+				
+				<!-- Container for the main content -->
+				<div id="contentContainer">
+					<ul id="contentSlider">
+						<!-- List items that contain the main content for the page -->
+					</ul>
+				</div>
+
+				<div id="temp">
+					<li id="Android" class="tabContent">
+						<h1>Insert Android projects here</h1>
+					</li>
+					<li id="Java" class="tabContent">
+						<h1>Insert Java projects here</h1>
+					</li>
+					<li id="CPlusPlus" class="tabContent">
+						<h1>Insert C++ projects here</h1>
+					</li>
+				</div>
+			</div>
 		</div>
 		
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
 		<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
-		<script src="file:///D:/Programming/Web/WeeblySite/scripts/ProgrammingProjectSelector.js"></script>
-		<script src="file:///D:/Programming/Web/WeeblySite/scripts/LoremIpsumAdder.js"></script>
+		<script src="scripts/ProgrammingProjectSelector.js"></script>
+		<script src="scripts/LoremIpsumAdder.js"></script>
 	</body>
 </html>

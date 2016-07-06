@@ -4,6 +4,50 @@
 		"selected_items":
 		[
 			[
+				"creat",
+				"createTextNode"
+			],
+			[
+				"fra",
+				"fragment"
+			],
+			[
+				"pad",
+				"padding-bottom"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"appen",
+				"appendChild"
+			],
+			[
+				"fo",
+				"for	for (…) {…}"
+			],
+			[
+				"lorem",
+				"loremIpsum"
+			],
+			[
+				"lor",
+				"loremIpsum"
+			],
+			[
+				"f",
+				"for	for (…) {…}"
+			],
+			[
+				"over",
+				"overflow-y"
+			],
+			[
 				"eleme",
 				"element"
 			],
@@ -104,10 +148,6 @@
 				"Logos_Android"
 			],
 			[
-				"marg",
-				"margin"
-			],
-			[
 				"op",
 				"opacity"
 			],
@@ -160,10 +200,6 @@
 				"dropDownAnim"
 			],
 			[
-				"fo",
-				"for	for (…) {…} (Improved Native For-Loop)"
-			],
-			[
 				"class",
 				"className"
 			],
@@ -198,10 +234,6 @@
 			[
 				"inlin",
 				"inline-block"
-			],
-			[
-				"over",
-				"overflow"
 			],
 			[
 				"mar",
@@ -260,10 +292,6 @@
 				"padding-right"
 			],
 			[
-				"pad",
-				"padding"
-			],
-			[
 				"h",
 				"hidden"
 			],
@@ -303,7 +331,15 @@
 			"file": "Projects.html",
 			"settings":
 			{
-				"buffer_size": 3697,
+				"buffer_size": 4781,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "scripts/LoremIpsumAdder.js",
+			"settings":
+			{
+				"buffer_size": 3482,
 				"line_ending": "Windows"
 			}
 		},
@@ -413,7 +449,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -422,15 +458,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3697,
+						"buffer_size": 4781,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								982,
-								982
+								2759,
+								2759
 							]
 						],
 						"settings":
@@ -439,7 +475,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 936.0,
+						"translation.y": 2484.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -447,6 +483,35 @@
 				},
 				{
 					"buffer": 1,
+					"file": "scripts/LoremIpsumAdder.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3482,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3175,
+								3175
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "scripts/ProgrammingProjectSelector.js",
 					"semi_transient": false,
 					"settings":
@@ -468,7 +533,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1026.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
