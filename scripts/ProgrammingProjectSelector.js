@@ -71,7 +71,7 @@ function openProjectLanguage(event, languageName) {
 		});
 		resetLocation(currentLanguageDOM, "100%");
 
-		timeline.add(TweenMax.to(contentContainer, 2, {height:"100%", ease:Bounce.easeOut, opacity:1}));
+		timeline.add(TweenMax.to(contentContainer, 2, {ease:Bounce.easeOut, opacity:1}));
 
 		tabOpen = true;
 

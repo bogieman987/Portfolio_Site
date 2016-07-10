@@ -4,20 +4,56 @@
 		"selected_items":
 		[
 			[
+				"so",
+				"solid"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"u",
+				"uppercase"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"a",
+				"a	Tag"
+			],
+			[
+				"li",
+				"li	Tag"
+			],
+			[
+				"marg",
+				"margin"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"re",
+				"repeat-y"
+			],
+			[
 				"creat",
 				"createTextNode"
 			],
 			[
 				"fra",
 				"fragment"
-			],
-			[
-				"pad",
-				"padding-bottom"
-			],
-			[
-				"marg",
-				"margin-bottom"
 			],
 			[
 				"for",
@@ -50,10 +86,6 @@
 			[
 				"eleme",
 				"element"
-			],
-			[
-				"re",
-				"remove"
 			],
 			[
 				"last",
@@ -122,10 +154,6 @@
 			[
 				"timel",
 				"timeline"
-			],
-			[
-				"ba",
-				"background-position"
 			],
 			[
 				"bor",
@@ -220,10 +248,6 @@
 				"currentTab"
 			],
 			[
-				"bac",
-				"background-color"
-			],
-			[
 				"border",
 				"border"
 			],
@@ -234,10 +258,6 @@
 			[
 				"inlin",
 				"inline-block"
-			],
-			[
-				"mar",
-				"margin"
 			],
 			[
 				"list",
@@ -318,10 +338,6 @@
 			[
 				"fu",
 				"function"
-			],
-			[
-				"a",
-				"auto"
 			]
 		]
 	},
@@ -331,15 +347,7 @@
 			"file": "Projects.html",
 			"settings":
 			{
-				"buffer_size": 4781,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "scripts/LoremIpsumAdder.js",
-			"settings":
-			{
-				"buffer_size": 3482,
+				"buffer_size": 7145,
 				"line_ending": "Windows"
 			}
 		},
@@ -347,7 +355,7 @@
 			"file": "scripts/ProgrammingProjectSelector.js",
 			"settings":
 			{
-				"buffer_size": 2673,
+				"buffer_size": 2658,
 				"line_ending": "Windows"
 			}
 		}
@@ -393,6 +401,11 @@
 	},
 	"file_history":
 	[
+		"/D/Programming/Web/WeeblySite/scripts/AutoScroller.js",
+		"/D/Programming/Web/WeeblySite/landing.html",
+		"/D/Programming/Web/WeeblySite/manifest.json",
+		"/D/Programming/Web/WeeblySite/scripts/ProgrammingProjectSelector.js",
+		"/D/Programming/Web/WeeblySite/scripts/LoremIpsumAdder.js",
 		"/D/Programming/Web/WeeblySite/scripts/BlurElements",
 		"/D/Programming/Web/WeeblySite/Blur.html",
 		"/D/Programming/Web/WeeblySite/Projects.html",
@@ -449,7 +462,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -458,15 +471,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4781,
+						"buffer_size": 7145,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2759,
-								2759
+								7051,
+								7051
 							]
 						],
 						"settings":
@@ -475,56 +488,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2484.0,
+						"translation.y": 4752.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "scripts/LoremIpsumAdder.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3482,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3175,
-								3175
-							]
-						],
-						"settings":
-						{
-							"auto_name": "",
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "scripts/ProgrammingProjectSelector.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2673,
+						"buffer_size": 2658,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								489,
-								489
+								2177,
+								2177
 							]
 						],
 						"settings":
@@ -533,10 +517,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1026.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
