@@ -4,6 +4,86 @@
 		"selected_items":
 		[
 			[
+				"padd",
+				"padding-bottom"
+			],
+			[
+				"marg",
+				"margin-right"
+			],
+			[
+				"margo",
+				"margin-bottom"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"str",
+				"strokeCapString"
+			],
+			[
+				"stroke-",
+				"stroke-linecap"
+			],
+			[
+				"stroke",
+				"stroke-dashoffset"
+			],
+			[
+				"class",
+				"classes"
+			],
+			[
+				"stro",
+				"stroke-dashoffset"
+			],
+			[
+				"We",
+				"WebkitTransitionDelay"
+			],
+			[
+				"tra",
+				"transitionDelay"
+			],
+			[
+				"ease",
+				"ease-in-out"
+			],
+			[
+				"strok",
+				"strokeDasharray"
+			],
+			[
+				"sub",
+				"subTL"
+			],
+			[
+				"cl",
+				"classes"
+			],
+			[
+				"i",
+				"images"
+			],
+			[
+				"anim",
+				"animateStrokes"
+			],
+			[
+				"border-top",
+				"border-top-left-radius"
+			],
+			[
+				"bac",
+				"background-repeat"
+			],
+			[
+				"box-s",
+				"box-shadow"
+			],
+			[
 				"so",
 				"solid"
 			],
@@ -20,24 +100,12 @@
 				"uppercase"
 			],
 			[
-				"padd",
-				"padding"
-			],
-			[
 				"a",
 				"a	Tag"
 			],
 			[
 				"li",
 				"li	Tag"
-			],
-			[
-				"marg",
-				"margin"
-			],
-			[
-				"bac",
-				"background"
 			],
 			[
 				"ba",
@@ -116,10 +184,6 @@
 				"lastContentTab"
 			],
 			[
-				"tra",
-				"transition"
-			],
-			[
 				"conte",
 				"contentSlider"
 			],
@@ -162,10 +226,6 @@
 			[
 				"cu",
 				"currentLanguageDOM"
-			],
-			[
-				"ease",
-				"easeOut"
 			],
 			[
 				"di",
@@ -228,16 +288,8 @@
 				"dropDownAnim"
 			],
 			[
-				"class",
-				"className"
-			],
-			[
 				"pr",
 				"projects"
-			],
-			[
-				"cl",
-				"className"
 			],
 			[
 				"get",
@@ -347,7 +399,7 @@
 			"file": "Projects.html",
 			"settings":
 			{
-				"buffer_size": 7145,
+				"buffer_size": 7866,
 				"line_ending": "Windows"
 			}
 		},
@@ -401,10 +453,12 @@
 	},
 	"file_history":
 	[
+		"/D/Programming/Web/WeeblySite/scripts/jQueryTransit.js",
+		"/D/Programming/Web/WeeblySite/images/Brain.svg",
+		"/D/Programming/Web/WeeblySite/scripts/ProgrammingProjectSelector.js",
 		"/D/Programming/Web/WeeblySite/scripts/AutoScroller.js",
 		"/D/Programming/Web/WeeblySite/landing.html",
 		"/D/Programming/Web/WeeblySite/manifest.json",
-		"/D/Programming/Web/WeeblySite/scripts/ProgrammingProjectSelector.js",
 		"/D/Programming/Web/WeeblySite/scripts/LoremIpsumAdder.js",
 		"/D/Programming/Web/WeeblySite/scripts/BlurElements",
 		"/D/Programming/Web/WeeblySite/Blur.html",
@@ -414,7 +468,7 @@
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 43.0
 	},
 	"find_in_files":
 	{
@@ -428,6 +482,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"animateStrokes",
+			"].",
+			"$path",
 			"contentSlider",
 			"160px",
 			"slideLeft",
@@ -445,6 +502,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"animateHeader",
+			"$paths",
 			"$contentSlider",
 			"slideInLeft",
 			"moveInLeft",
@@ -471,15 +530,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7145,
+						"buffer_size": 7866,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7051,
-								7051
+								7631,
+								7631
 							]
 						],
 						"settings":
@@ -488,7 +547,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 4752.0,
+						"translation.y": 4303.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -507,8 +566,8 @@
 						"selection":
 						[
 							[
-								2177,
-								2177
+								0,
+								0
 							]
 						],
 						"settings":
@@ -517,7 +576,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1020.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -565,7 +624,7 @@
 	"project": "WeeblySite.sublime-project",
 	"replace":
 	{
-		"height": 50.0
+		"height": 80.0
 	},
 	"save_all_on_build": true,
 	"select_file":

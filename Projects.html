@@ -5,43 +5,76 @@
 		<title>Test</title>
 		<style type="text/css">
 			body {
-				background: #ffffff;
+				background: #123888;
 				margin: 0 0;
 			}
 			h1 {
 				font-size: 50px;
 				font-family: sans-serif;
-
 				text-align: center;
-
-				color: black;
-				background-color: #bbbbbb;
+				color: white;
+				background-color: #05163C;
 				padding-bottom: 2px;
-
 				border-top: 0px solid;
 				border-top-left-radius: 20px;
 				border-top-right-radius: 20px;
 			}
-			#buttonBar {
+			#bar {
+				display: table;
 				position: fixed;
 				top: 0;
+				width: 100%;
 				padding-top: 10px;
 				padding-bottom: 10px;
 				background: rgba(35, 35, 35, 0.95);
-				width: 100%;
 				z-index: 100;
+
 			}
-			.buttonList {
+			#barContainer {
+				display: table;
+				overflow-y: hidden;
+				width: 100%;
+				margin: 0 auto;
+			}
+			#logo {
+				display: table-cell;
+				overflow-y: hidden;
+				margin-right: 30px;
+				padding: 0;
+				vertical-align: middle;
+				line-height: normal;
+			}
+			#logo h2 {
+				display: block;
+				vertical-align: top;
+				font-size: 40px;
+				font-family: sans-serif;
+				text-align: left;
+				color: white;
+				margin: 0 30px 0 10px;
+				padding-left: 20px;
+				max-width: 400px;
+			}
+			#buttonBar {
+				display: table-cell;
+				overflow-y: hidden;
+				padding: 0;
+				vertical-align: middle;
+			}
+			#buttonList {
 				float: right;
 				overflow: hidden;
+				max-width: 1115px;
+				margin: 0;
+				padding: 0;
 			}
 			.button {
 				display: inline-block;
 				margin-right: 5px;
-				padding: 0;
-				margin: 0;				
+				padding: 0;	
 			}
 			.buttonText {
+				display: block;
 				border: 2px solid #ffffff;
 				padding: 8px 12px;
 				border-radius: 2px;
@@ -50,209 +83,109 @@
 				text-decoration: none;
 				letter-spacing: 0.05em;
 				font-size: 14px;
-				font-family: "Karla";
+				font-family: "Lato", sans-serif;
 				font-weight: 700;
 				line-height: normal;
 			}
 			.mainContainer {
 				margin: 0 auto;
 				padding-top: 100px;
-				width: 960px;
+				padding-bottom: 20px;
 			}
-			.subContainer {
-				border: 0px solid;
-				border-radius: 20px;
+			.subContainer {		
 				height: 900px;	
-				box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 			}
-			#home.subContainer {
-				max-height: 730px;
+			.contentContainer {
+				width: 960px;
+				height: 100%;
+				border: 0px solid;
+				border-radius: 20px;	
+				box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+				background: #ffffff;
+				margin: 0 auto;
+			}
+			#home .subContainer {
 				background: url("images/Background.png");
 				background-repeat: no-repeat;
 				background-position: 50% 0;
 				background-size: 200%;
-
+			}
+			#home .contentContainer {
 				box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+				height: 60%;
+				padding: 20px 0 20px 0;
 			}	
 			#home h1 {
-				color: white;
+				color: black;
 				background-color: transparent;
 			}
 			#brain {
-				position: relative;
-				left: 30%;
-				width: 40%;
 				background-color: transparent;
 				z-index: 1;
 			}
-			.st2 {
+			.st0, .st1, .st2, .st3, .st4, .st5, .st6 {
 				stroke-linecap: round;
-			}
-			.st4 {
-				stroke-linecap: round;
-			}
-			/* Make so text doesn't wrap */
-			p {
-				margin: 0;
-				padding: 0;
-			}	
-			
-			/* Style the list */
-			ul#tab {
-				position: relative;
-
-				list-style-type: none;
-
-				margin: 0 auto;
-
-				width: 315.6px;
-
-				padding: 5px;
-
-				overflow: auto;
-
-				border: 2px solid #ccc;
-				border-radius: 2px;
-
-				float: left;
-			}		
-			/* Float the list items side by side */
-			ul#tab li {
-				float: left;
-			}
-			/* Style the links inside the list items */
-			ul#tab li a {
-				display: inline-block;
-
-				color: black;
-
-				padding: 14px 14px;
-
-				text-decoration: none;
-
-				transition: 0.3s;
-
-				font-size: 17px;
-
-				background-color: transparent;
-				background-size: 70px 70px;
-				background-repeat: no-repeat;
-				background-position: center;
-
-				border: 2px solid #ffffff;
-				border-radius: 2px;
-
-				margin: 2px 2px -3px 2px;
-
-				width: 70px;
-				height: 70px;
-			}
-			/* Button backgrounds */
-			a#AndroidButton {
-				background: url("images/Logos_Android.png");
-			}
-			a#JavaButton {
-				background: url("images/Logos_Java.png");
-			}
-			a#CPlusPlusButton {
-				background: url("images/Logos_CPlusPlus.png");
-			}
-			/* Change the background color of links on hover */
-			ul#tab li a:hover {
-				background-color: transparent;
-				border-color: #ddd;
-			}
-
-			/* Create an active.current tablink class */
-			ul#tab li a:focus, .active {
-				/* border: 2px solid #ffffff; */
-				border-color: #aaa;
-				background-color: transparent;
-			}
-			/* Remove padding from it being an unordered list */
-			ul#contentSlider {
-				padding: 0;
-				margin: auto;
-				width: 200%;
-			}
-			/* Make so content can appear next to each other */
-			ul#contentSlider li {
-				float: left;
-			}
-			/* General style for the content container */
-			#contentContainer {
-				display: none;
-
-				padding: 6px 6px;
-
-				border: 2px solid #ccc;
-				border-radius: 2px;
-
-				margin-top: -1.5px;
-
-				overflow: hidden;
-
 				opacity: 0;
 			}
-			/* General style for the content */
-			.tabContent {
-				margin: auto;
-
-				padding: 0;
-
-				width: 50%;
-			}
-			#temp {
-				display: none;
-			}
-			#projectSelector {
-				max-height: 117.8px;
-				overflow: hidden;
-			}
-			#text {
-				padding: 5px 5px 5px 20px;
-				width: 400px;
-				overflow: hidden;
-				margin: auto 0;
-			}
 			button {
-				position: relative;
-				top: 25px;
-				margin: auto 50px;
+				display: table;
+				margin: 0 auto;
+			}
+
+			.filter{
+				filter: blur(20px);
 			}
 		</style>
+
+		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 	</head>
 	<body onload="replaceSVGWithInline(brain)">
-		<div id="buttonBar">
-			<ul id="buttonList">
-				<li class="button">
-					<a class="buttonText" href="#" onclick="scrollToSection(event, '#home')">Home</a>
-				</li>
-				<li class="button">
-					<a class="buttonText" href="#" onclick="scrollToSection(event, '#about')">About</a>
-				</li>
-				<li class="button">
-					<a class="buttonText" href="#" onclick="scrollToSection(event, '#github')">Project Selector</a>
-				</li>
-				<li class="button">
-					<a class="buttonText" href="#" onclick="scrollToSection(event, '#contact')">Contact</a>
-				</li>
-			</ul>
+		<div id="bar">
+			<div id="barContainer">
+				<div id="logo">
+					<h2>Test site</h2>
+				</div>
+				<div id="buttonBar">
+					<ul id="buttonList">
+						<li class="button">
+							<a class="buttonText" href="/" onclick="scrollToSection(event, '#home')">Home</a>
+						</li>
+						<li class="button">
+							<a class="buttonText" href="/" onclick="scrollToSection(event, '#about')">About</a>
+						</li>
+						<li class="button">
+							<a class="buttonText" href="/" onclick="scrollToSection(event, '#github')">Project Selector</a>
+						</li>
+						<li class="button">
+							<a class="buttonText" href="/" onclick="scrollToSection(event, '#contact')">Contact</a>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</div>
+			
 		<div class="mainContainer">
 			<div id="home" class="subContainer">
 				<img id="brain" src="images/Brain.svg" alt="Picture of brain">
-				<button onclick="animateStrokes(['st0', 'st1', 'st2', 'st3'])">Run Script</button>
-				<h1>Home</h1>
+				<div class="contentContainer">
+					<button onclick="animateHeader(['.st0','.st1','.st2', '.st3', '.st4', '.st5', '.st6'])">Run Script</button>
+					<h1>Home</h1>
+				</div>
 			</div>
 			<div id="about" class="subContainer">
-				<h1>About</h1>
+				<div class="contentContainer">
+					<h1>About</h1>
+				</div>
 			</div>
 			<div id="github" class="subContainer">
-				<h1>Github</h1>
+				<div class="contentContainer">
+					<h1>Github</h1>
+				</div>				
 			</div>
 			<div id="contact" class="subContainer">
-				<h1>Contact</h1>
+				<div class="contentContainer">
+					<h1>Contact</h1>
+				</div>				
 			</div>
 		</div>
 		
@@ -269,10 +202,10 @@
 			}
 
 			function replaceSVGWithInline(image) {
-				var $img = $(image);
-				var imgID = $img.attr("id");
-				var imgClass = $img.attr("class");
-				var imgURL = $img.attr("src");
+				var $img = $(image),
+					imgID = $img.attr("id"),
+					imgClass = $img.attr("class"),
+					imgURL = $img.attr("src");
 
 				$.get(imgURL, function(data) {
 					// Get the SVG tag, ignore the rest
@@ -292,28 +225,80 @@
 				}, "xml");
 			}
 
-			function animateStrokes(classes) {
-				console.log("Animating strokes");
-
+			// TODO - use tween attribute and timeline for better animation
+			function animateHeader(classes) {
 				for (var i = 0; i < classes.length; i++) {
-					var path = document.getElementsByClassName(classes[i]);
+					
+					var $paths = $(classes[i]);
 
-					for (var j = 0; j < path.length; j++) {
-						var length = path[j].getTotalLength();
-						// Clear any previous transition
-						path[j].style.transition = path[j].style.WebkitTransition = "none";
-						// Set up the starting positions
-						path[j].style.strokeDasharray = length + " " + length;
-						path[j].style.strokeDashoffset = length;
+					// Remove any transition and set opacity to 0
+					$paths.css({
+						"transition" : "none",
+						"opacity" : "0"
+					});
+
+					// Set up strokes and initials settings for the individual elements
+					for (var j = 0; j < $paths.length; j++) {
+						var length = $paths[j].getTotalLength();
+						// Set the dash array and offset to the length of the path						
+						$paths[j].style.strokeDasharray = length + " " + length;
+						$paths[j].style.strokeDashoffset = length;		
 						// Trigger a layout so styles are calculated & the browser
 						// picks up the starting position before animating
-						path[j].getBoundingClientRect();
-						// Define our transition
-						path[j].style.transition = path[j].style.WebkitTransition = "stroke-dashoffset 3s ease-in-out";
-						// Go!
-						path[j].style.strokeDashoffset = "0";
+						$paths[j].getBoundingClientRect();	
+					}
+
+					// Define our transition
+					switch($paths.attr("class")) {
+						case "st0":
+							$paths.css({
+								// Circle
+								"transition" : "opacity 0.5s, stroke-dashoffset 3s ease-in-out",
+								"transition-delay" : "1.5s"
+							});
+							break;
+						case "st3":
+							$paths.css({
+								// Small lines
+								"transition" : "opacity 0.5s, stroke-dashoffset 2s ease-in-out",
+								"transition-delay" : "1s"
+							});
+							break;
+						case "st1":
+						case "st2":
+						case "st4":
+							$paths.css({
+								// Large lines
+								"transition" : "opactiy 0.1s, stroke-dashoffset 2s ease-in-out"
+							});
+							break;
 					}
 				}
+
+				// Define transition for particular lines
+				var $leftLine = $("#leftline");
+				$leftLine[0].style.transition = $leftLine[0].style.WebkitTransition = "none";
+				$leftLine.css({
+							"transition" : "opacity 0s, stroke-dashoffset 3s ease-out",
+							"transition-delay" : "2.73s"
+				});
+				var $rightLine = $("#rightline");
+				$rightLine[0].style.transition = $rightLine[0].style.WebkitTransition = "none";
+				$rightLine.css({
+							"transition" : "opacity 0s, stroke-dashoffset 3s ease-out",
+							"transition-delay" : "3.13s"
+				});
+
+				// Initiate transition
+				for (var i = 0; i < classes.length; i++) {
+					var $paths = $(classes[i]);
+
+					$paths.css({
+						"opacity" : "1",
+						"stroke-dashoffset" : "0"
+					});
+				}
+				
 			}
 		</script>
 	</body>
