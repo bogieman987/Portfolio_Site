@@ -5,7 +5,7 @@
 		<title>Test</title>
 		<style type="text/css">
 			body {
-				background: #123888;
+				
 				margin: 0 0;
 			}
 			h1 {
@@ -18,6 +18,11 @@
 				border-top: 0px solid;
 				border-top-left-radius: 20px;
 				border-top-right-radius: 20px;
+				margin: 0;
+			}
+			p {
+				padding: 20px;
+				margin: 0;
 			}
 			#bar {
 				display: table;
@@ -89,7 +94,6 @@
 			}
 			.mainContainer {
 				margin: 0 auto;
-				padding-top: 100px;
 				padding-bottom: 20px;
 			}
 			.subContainer {		
@@ -104,22 +108,42 @@
 				background: #ffffff;
 				margin: 0 auto;
 			}
-			#home .subContainer {
-				background: url("images/Background.png");
+			.separator {
+				height: 250px;
+			}
+			#home {
+				background-color: #123888;
+				background: url(images/Background.png);
 				background-repeat: no-repeat;
 				background-position: 50% 0;
-				background-size: 200%;
-			}
+				
+				padding-top: 100px;
+				padding-bottom: 250px;
+			}/* 
+			#bg {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 110%;
+			} */
 			#home .contentContainer {
+				background-color: transparent;
 				box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
 				height: 60%;
-				padding: 20px 0 20px 0;
+				border: 7px solid white;
 			}	
 			#home h1 {
-				color: black;
-				background-color: transparent;
+				background: transparent;
+				border-bottom: 7px solid white;
+			}
+			#home p {
+				color: white;
+				font-family: 'Katibeh', cursive;
+				font-size: 1.5em;
 			}
 			#brain {
+				padding: 30px 0 30px 0;
 				background-color: transparent;
 				z-index: 1;
 			}
@@ -127,19 +151,28 @@
 				stroke-linecap: round;
 				opacity: 0;
 			}
+			#github {
+				background-color: #1b52c6;
+			}
 			button {
 				display: table;
 				margin: 0 auto;
 			}
-
 			.filter{
 				filter: blur(20px);
+			}
+
+			#svg {
+				border: 2px solid grey;
+				border-radius: 10px;
+				margin: 0 auto;
 			}
 		</style>
 
 		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Katibeh" rel="stylesheet"> 
 	</head>
-	<body onload="replaceSVGWithInline(brain)">
+	<body onload="replaceSVGWithInline()">
 		<div id="bar">
 			<div id="barContainer">
 				<div id="logo">
@@ -166,22 +199,23 @@
 			
 		<div class="mainContainer">
 			<div id="home" class="subContainer">
-				<img id="brain" src="images/Brain.svg" alt="Picture of brain">
-				<div class="contentContainer">
-					<button onclick="animateHeader(['.st0','.st1','.st2', '.st3', '.st4', '.st5', '.st6'])">Run Script</button>
-					<h1>Home</h1>
-				</div>
-			</div>
-			<div id="about" class="subContainer">
+				<svg id="svg" width="100%">
+					<defs></defs>
+				</svg>
+				<!-- <img id="brain" src="images/SVG/Brain.svg" alt="Drawn picture of brain surrounded by a circle"> -->
+				<button onclick="animateHeader(['.st0','.st1','.st2', '.st3', '.st4', '.st5', '.st6'])">Start Animation</button>
 				<div class="contentContainer">
 					<h1>About</h1>
+					<p>A little bit of information about myself</p>
 				</div>
 			</div>
+			<div class="separator"></div>
 			<div id="github" class="subContainer">
 				<div class="contentContainer">
 					<h1>Github</h1>
 				</div>				
 			</div>
+			<div class="separator"></div>
 			<div id="contact" class="subContainer">
 				<div class="contentContainer">
 					<h1>Contact</h1>
@@ -192,6 +226,7 @@
 		<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/plugins/ScrollToPlugin.min.js"></script>
+		<script src="scripts/snap.svg.js"></script>
 		<script type="text/javascript">
 			function scrollToSection(event, element) {
 				event.preventDefault();
@@ -202,7 +237,7 @@
 			}
 
 			function replaceSVGWithInline(image) {
-				var $img = $(image),
+				/*var $img = $(image),
 					imgID = $img.attr("id"),
 					imgClass = $img.attr("class"),
 					imgURL = $img.attr("src");
@@ -222,83 +257,65 @@
 					$svg = $svg.removeAttr("xmlns:a");
 					// Replace image with new SVG
 					$img.replaceWith($svg);
-				}, "xml");
+				}, "xml");*/
+
+				var draw = Snap("#svg");
+
+				Snap.load("images/SVG/Brain.svg", function(f) {
+					draw.append(f);
+				});
 			}
 
-			// TODO - use tween attribute and timeline for better animation
 			function animateHeader(classes) {
+				var timeline = new TimelineMax();
+
 				for (var i = 0; i < classes.length; i++) {
 					
 					var $paths = $(classes[i]);
 
 					// Remove any transition and set opacity to 0
-					$paths.css({
-						"transition" : "none",
-						"opacity" : "0"
-					});
+					TweenMax.set($paths, {transition:"none", opacity:"0"});
 
 					// Set up strokes and initials settings for the individual elements
 					for (var j = 0; j < $paths.length; j++) {
 						var length = $paths[j].getTotalLength();
-						// Set the dash array and offset to the length of the path						
-						$paths[j].style.strokeDasharray = length + " " + length;
-						$paths[j].style.strokeDashoffset = length;		
+						// Set the dash array and offset to the length of the path	
+						TweenMax.set($paths[j], {strokeDasharray:(length + " " + length), strokeDashoffset:length});
 						// Trigger a layout so styles are calculated & the browser
 						// picks up the starting position before animating
 						$paths[j].getBoundingClientRect();	
 					}
 
 					// Define our transition
-					switch($paths.attr("class")) {
-						case "st0":
-							$paths.css({
-								// Circle
-								"transition" : "opacity 0.5s, stroke-dashoffset 3s ease-in-out",
-								"transition-delay" : "1.5s"
-							});
-							break;
-						case "st3":
-							$paths.css({
-								// Small lines
-								"transition" : "opacity 0.5s, stroke-dashoffset 2s ease-in-out",
-								"transition-delay" : "1s"
-							});
-							break;
+					switch($paths.attr("class")) {		
 						case "st1":
 						case "st2":
 						case "st4":
-							$paths.css({
-								// Large lines
-								"transition" : "opactiy 0.1s, stroke-dashoffset 2s ease-in-out"
-							});
+							new TimelineMax().to($paths, 0, {opacity:"1"}).to($paths, 2, {strokeDashoffset:"0", ease:Linear.noEase});
+							break;
+						case "st3":
+							new TimelineMax().to($paths, 0, {opacity:"1", delay:"1.5"}).to($paths, 2, {strokeDashoffset:"0", ease:Linear.noEase});
 							break;
 					}
 				}
 
+				var $circle = $("#Circle .st0");
+				new TimelineMax().to($circle, 0, {opacity:"1", delay:"3.16"}).to($circle, 3, {strokeDashoffset:"0", ease:Power4.easeOut});
+
 				// Define transition for particular lines
-				var $leftLine = $("#leftline");
-				$leftLine[0].style.transition = $leftLine[0].style.WebkitTransition = "none";
-				$leftLine.css({
-							"transition" : "opacity 0s, stroke-dashoffset 3s ease-out",
-							"transition-delay" : "2.73s"
-				});
-				var $rightLine = $("#rightline");
-				$rightLine[0].style.transition = $rightLine[0].style.WebkitTransition = "none";
-				$rightLine.css({
-							"transition" : "opacity 0s, stroke-dashoffset 3s ease-out",
-							"transition-delay" : "3.13s"
-				});
+				var $leftLine = $("#LeftLine");
+				TweenMax.set($leftLine, {transition:"none"});
+				new TimelineMax().to($leftLine, 0, {opacity:"1", delay:"3.51"}).to($leftLine, 3, {strokeDashoffset:"0", ease:Power4.easeOut, yoyo:true});
 
-				// Initiate transition
-				for (var i = 0; i < classes.length; i++) {
-					var $paths = $(classes[i]);
+				var $rightLine = $("#RightLine");
+				TweenMax.set($rightLine, {transition:"none"});
+				new TimelineMax().to($rightLine, 0, {opacity:"1", delay:"3.75"}).to($rightLine, 3, {strokeDashoffset:"0", ease:Power4.easeOut});
 
-					$paths.css({
-						"opacity" : "1",
-						"stroke-dashoffset" : "0"
-					});
+				var $buttonLines = $("#ButtonLines").children();
+				for (var i = 0; i < $buttonLines.length; i++) {
+					TweenMax.set($buttonLines[i], {transition:"none"});
+					new TimelineMax().to($buttonLines[i], 0, {opacity:"1", delay:"4"}).to($buttonLines[i], 1.5, {strokeDashoffset:"0", ease:Power4.easeOut});
 				}
-				
 			}
 		</script>
 	</body>

@@ -4,8 +4,48 @@
 		"selected_items":
 		[
 			[
+				"margin",
+				"margin"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"imag",
+				"image"
+			],
+			[
+				"ri",
+				"rightLine"
+			],
+			[
+				"ease",
+				"ease"
+			],
+			[
+				"left",
+				"leftLine"
+			],
+			[
+				"str",
+				"strokeDashoffset"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
 				"padd",
-				"padding-bottom"
+				"padding"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"on",
+				"onload"
 			],
 			[
 				"marg",
@@ -14,14 +54,6 @@
 			[
 				"margo",
 				"margin-bottom"
-			],
-			[
-				"margin",
-				"margin-top"
-			],
-			[
-				"str",
-				"strokeCapString"
 			],
 			[
 				"stroke-",
@@ -48,10 +80,6 @@
 				"transitionDelay"
 			],
 			[
-				"ease",
-				"ease-in-out"
-			],
-			[
 				"strok",
 				"strokeDasharray"
 			],
@@ -74,10 +102,6 @@
 			[
 				"border-top",
 				"border-top-left-radius"
-			],
-			[
-				"bac",
-				"background-repeat"
 			],
 			[
 				"box-s",
@@ -106,10 +130,6 @@
 			[
 				"li",
 				"li	Tag"
-			],
-			[
-				"ba",
-				"background-color"
 			],
 			[
 				"re",
@@ -340,10 +360,6 @@
 				"text-align"
 			],
 			[
-				"font",
-				"font-family"
-			],
-			[
 				"al",
 				"align-self"
 			],
@@ -399,7 +415,15 @@
 			"file": "Projects.html",
 			"settings":
 			{
-				"buffer_size": 7866,
+				"buffer_size": 8070,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "images/Brain.svg",
+			"settings":
+			{
+				"buffer_size": 11289,
 				"line_ending": "Windows"
 			}
 		},
@@ -419,10 +443,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 446.0,
-		"last_filter": "pack",
+		"height": 185.0,
+		"last_filter": "vm",
 		"selected_items":
 		[
+			[
+				"vm",
+				"View: Toggle Menu"
+			],
 			[
 				"pack",
 				"Package Control: Install Package"
@@ -453,6 +481,7 @@
 	},
 	"file_history":
 	[
+		"/C/Users/ryan2/AppData/Local/Temp/newhope3.svg",
 		"/D/Programming/Web/WeeblySite/scripts/jQueryTransit.js",
 		"/D/Programming/Web/WeeblySite/images/Brain.svg",
 		"/D/Programming/Web/WeeblySite/scripts/ProgrammingProjectSelector.js",
@@ -482,6 +511,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"color-interpolation-filters:sRGB",
 			"animateStrokes",
 			"].",
 			"$path",
@@ -521,7 +551,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -530,15 +560,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7866,
+						"buffer_size": 8070,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7631,
-								7631
+								8041,
+								8041
 							]
 						],
 						"settings":
@@ -547,14 +577,42 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 4303.0,
+						"translation.y": 3213.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "images/Brain.svg",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11289,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								251,
+								251
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
+					"buffer": 2,
 					"file": "scripts/ProgrammingProjectSelector.js",
 					"semi_transient": false,
 					"settings":
@@ -576,10 +634,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1020.0,
+						"translation.y": 127.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -659,9 +717,9 @@
 	{
 	},
 	"show_minimap": true,
-	"show_open_files": false,
+	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 188.0,
 	"status_bar_visible": true,
 	"template_settings":
