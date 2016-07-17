@@ -5,7 +5,6 @@
 		<title>Test</title>
 		<style type="text/css">
 			body {
-				
 				margin: 0 0;
 			}
 			h1 {
@@ -93,14 +92,17 @@
 				line-height: normal;
 			}
 			.mainContainer {
+				max-width: 1520px;
 				margin: 0 auto;
 				padding-bottom: 20px;
+				overflow-y: hidden;				
 			}
-			.subContainer {		
+			.subContainer {	
 				height: 900px;	
 			}
 			.contentContainer {
-				width: 960px;
+				max-width: 960px;
+				min-width: 700px;
 				height: 100%;
 				border: 0px solid;
 				border-radius: 20px;	
@@ -119,14 +121,7 @@
 				
 				padding-top: 100px;
 				padding-bottom: 250px;
-			}/* 
-			#bg {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 110%;
-			} */
+			}
 			#home .contentContainer {
 				background-color: transparent;
 				box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
@@ -151,6 +146,10 @@
 				stroke-linecap: round;
 				opacity: 0;
 			}
+			/* .st0, .st1, .st2, .st3, .st4 {
+				stroke-linecap: round;
+				opacity: 0;
+			} */
 			#github {
 				background-color: #1b52c6;
 			}
@@ -158,21 +157,15 @@
 				display: table;
 				margin: 0 auto;
 			}
-			.filter{
-				filter: blur(20px);
-			}
-
-			#svg {
-				border: 2px solid grey;
-				border-radius: 10px;
-				margin: 0 auto;
+			.Link:hover circle {
+				fill: black;
 			}
 		</style>
 
 		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Katibeh" rel="stylesheet"> 
 	</head>
-	<body onload="replaceSVGWithInline()">
+	<body>
 		<div id="bar">
 			<div id="barContainer">
 				<div id="logo">
@@ -199,11 +192,8 @@
 			
 		<div class="mainContainer">
 			<div id="home" class="subContainer">
-				<svg id="svg" width="100%">
-					<defs></defs>
-				</svg>
-				<!-- <img id="brain" src="images/SVG/Brain.svg" alt="Drawn picture of brain surrounded by a circle"> -->
-				<button onclick="animateHeader(['.st0','.st1','.st2', '.st3', '.st4', '.st5', '.st6'])">Start Animation</button>
+				<svg id="svg"></svg>
+				<button onclick="animateHeader()">Start Animation</button>
 				<div class="contentContainer">
 					<h1>About</h1>
 					<p>A little bit of information about myself</p>
@@ -228,6 +218,31 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/plugins/ScrollToPlugin.min.js"></script>
 		<script src="scripts/snap.svg.js"></script>
 		<script type="text/javascript">
+			function calculateSVGHeight() {
+				var svgAspectRatio = 4.75390589723,
+				currentWidth = screen.width,
+				mainContainerWidth = parseInt($(".mainContainer").css("width"), 10);
+
+				if(currentWidth > mainContainerWidth) {
+					currentWidth = mainContainerWidth;
+				}
+
+				return currentWidth / svgAspectRatio;
+			}
+
+			$(window).ready(function() {
+				// Set up animation when window loads
+				addInteractiveHeader();
+			});
+
+			// Update the size of the svg 
+			$(window).resize(function() {
+				$("#svg").css({
+					"width" : "100%",
+					"height" : calculateSVGHeight().toString()
+				});
+			}); 
+
 			function scrollToSection(event, element) {
 				event.preventDefault();
 
@@ -236,49 +251,42 @@
 				TweenMax.to(window, 1.5, {scrollTo:{y:yPos, autoKill:false}, ease:Power2.easeOut});
 			}
 
-			function replaceSVGWithInline(image) {
-				/*var $img = $(image),
-					imgID = $img.attr("id"),
-					imgClass = $img.attr("class"),
-					imgURL = $img.attr("src");
-
-				$.get(imgURL, function(data) {
-					// Get the SVG tag, ignore the rest
-					var $svg = $(data).find("svg");
-					// Add replaced image's ID to the new SVG
-					if(typeof imgID !== "undefined") {
-						$svg = $svg.attr("id", imgID);
-					}
-					// Add replaced image's classes to the new SVG
-					if(typeof imgClass !== "undefined") {
-						$svg = $svg.attr("class", imgClass + "replaced-svg");
-					}
-					// Remove any invalid XML tags as per http://validator.w3.org
-					$svg = $svg.removeAttr("xmlns:a");
-					// Replace image with new SVG
-					$img.replaceWith($svg);
-				}, "xml");*/
+			function addInteractiveHeader() {
+				$("#svg").css({
+					"width" : "100%",
+					"height" : calculateSVGHeight().toString()
+				});
 
 				var draw = Snap("#svg");
 
-				Snap.load("images/SVG/Brain.svg", function(f) {
-					draw.append(f);
+				Snap.load("images/SVG/InteractiveHeader.svg", function(element) {
+					draw.append(element);
 				});
 			}
 
-			function animateHeader(classes) {
+			function animateHeader() {
 				var timeline = new TimelineMax();
+				//var classes = ['.st0','.st1','.st2', '.st3', '.st4', '.st5', '.st6'];
+				var classes = ['.st0','.st1','.st2', '.st3', '.st4'];
 
 				for (var i = 0; i < classes.length; i++) {
 					
-					var $paths = $(classes[i]);
+					var $paths = $("#HeaderAnim " + classes[i]);
 
-					// Remove any transition and set opacity to 0
-					TweenMax.set($paths, {transition:"none", opacity:"0"});
+					$paths.css({
+						"transition":"none",
+						"opacity":"0"
+					});
 
 					// Set up strokes and initials settings for the individual elements
 					for (var j = 0; j < $paths.length; j++) {
-						var length = $paths[j].getTotalLength();
+						var length = 0;
+						try {
+							length = $paths[j].getTotalLength();
+						} catch(err) {
+							console.log("Can't get total length! Element not a path. Element is type: " + $paths[j].tagName);
+							continue;
+						}
 						// Set the dash array and offset to the length of the path	
 						TweenMax.set($paths[j], {strokeDasharray:(length + " " + length), strokeDashoffset:length});
 						// Trigger a layout so styles are calculated & the browser
@@ -304,18 +312,47 @@
 
 				// Define transition for particular lines
 				var $leftLine = $("#LeftLine");
-				TweenMax.set($leftLine, {transition:"none"});
+				$leftLine.css({"transition":"none"});
 				new TimelineMax().to($leftLine, 0, {opacity:"1", delay:"3.51"}).to($leftLine, 3, {strokeDashoffset:"0", ease:Power4.easeOut, yoyo:true});
 
 				var $rightLine = $("#RightLine");
-				TweenMax.set($rightLine, {transition:"none"});
+				$rightLine.css({"transition":"none"});
 				new TimelineMax().to($rightLine, 0, {opacity:"1", delay:"3.75"}).to($rightLine, 3, {strokeDashoffset:"0", ease:Power4.easeOut});
 
 				var $buttonLines = $("#ButtonLines").children();
-				for (var i = 0; i < $buttonLines.length; i++) {
-					TweenMax.set($buttonLines[i], {transition:"none"});
-					new TimelineMax().to($buttonLines[i], 0, {opacity:"1", delay:"4"}).to($buttonLines[i], 1.5, {strokeDashoffset:"0", ease:Power4.easeOut});
-				}
+				$buttonLines.css({"transition":"none"});
+				new TimelineMax().to($buttonLines[0], 0, {opacity:"1", delay:"3.75"}).to($buttonLines[0], 1.5, {strokeDashoffset:"0", ease:Power4.easeOut, onComplete:function() {
+					// Linked in
+					$("#LinkedInButton .Link").children().css({
+						"opacity":"1"
+					});
+				}});
+				new TimelineMax().to($buttonLines[1], 0, {opacity:"1", delay:"4.18"}).to($buttonLines[1], 1.5, {strokeDashoffset:"0", ease:Power4.easeOut, onComplete:function() {
+					// Twitter
+					$("#TwitterButton .Link").children().css({
+						"opacity":"1"
+					});
+				}});
+				new TimelineMax().to($buttonLines[2], 0, {opacity:"1", delay:"4.39"}).to($buttonLines[2], 1.5, {strokeDashoffset:"0", ease:Power4.easeOut, onComplete:function() {
+					// GooglePlus
+					$("#GooglePlusButton .Link").children().css({
+						"opacity":"1"
+					});				
+				}});
+				new TimelineMax().to($buttonLines[3], 0, {opacity:"1", delay:"4.1"}).to($buttonLines[3], 1.5, {strokeDashoffset:"0", ease:Power4.easeOut, onComplete:function() {
+					// Blog
+					$("#BlogButton .Link").children().css({
+						"opacity":"1"
+					});
+				}});
+				new TimelineMax().to($buttonLines[4], 0, {opacity:"1", delay:"3.64"}).to($buttonLines[4], 1.5, {strokeDashoffset:"0", ease:Power4.easeOut, onComplete:function() {
+					// Github
+					$("#GithubButton .Link").children().css({
+						"opacity":"1"
+					});
+				}});
+
+				
 			}
 		</script>
 	</body>
