@@ -91,6 +91,9 @@
 				font-weight: 700;
 				line-height: normal;
 			}
+			#header {
+				width: 100%;
+			}
 			.mainContainer {
 				max-width: 1520px;
 				margin: 0 auto;
@@ -142,14 +145,13 @@
 				background-color: transparent;
 				z-index: 1;
 			}
-			.st0, .st1, .st2, .st3, .st4, .st5, .st6 {
+			.cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .link {
 				stroke-linecap: round;
 				opacity: 0;
 			}
-			/* .st0, .st1, .st2, .st3, .st4 {
-				stroke-linecap: round;
-				opacity: 0;
-			} */
+			.headerButton {
+				display: none;
+			}
 			#github {
 				background-color: #1b52c6;
 			}
@@ -157,7 +159,22 @@
 				display: table;
 				margin: 0 auto;
 			}
-			.Link:hover circle {
+			.link:hover circle {
+				fill: grey;
+			}
+			#linkedInButton .link:hover circle {
+				fill: rgb(0, 119, 181);
+			}
+			#twitterButton .link:hover circle {
+				fill: rgb(85, 172, 238);
+			}
+			#googlePlusButton .link:hover circle {
+				fill: rgb(220, 78, 65);
+			}
+			#blogButton .link:hover circle {
+				fill: rgb(255, 102, 0);
+			}
+			#githubButton .link:hover circle {
 				fill: black;
 			}
 		</style>
@@ -192,7 +209,7 @@
 			
 		<div class="mainContainer">
 			<div id="home" class="subContainer">
-				<svg id="svg"></svg>
+				<svg id="header"></svg>
 				<button onclick="animateHeader()">Start Animation</button>
 				<div class="contentContainer">
 					<h1>About</h1>
@@ -217,19 +234,9 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/plugins/ScrollToPlugin.min.js"></script>
 		<script src="scripts/snap.svg.js"></script>
+		<script src="scripts/scroller.js"></script>
+		<script src="scripts/interactiveHeader.js"></script>
 		<script type="text/javascript">
-			function calculateSVGHeight() {
-				var svgAspectRatio = 4.75390589723,
-				currentWidth = screen.width,
-				mainContainerWidth = parseInt($(".mainContainer").css("width"), 10);
-
-				if(currentWidth > mainContainerWidth) {
-					currentWidth = mainContainerWidth;
-				}
-
-				return currentWidth / svgAspectRatio;
-			}
-
 			$(window).ready(function() {
 				// Set up animation when window loads
 				addInteractiveHeader();
@@ -237,123 +244,10 @@
 
 			// Update the size of the svg 
 			$(window).resize(function() {
-				$("#svg").css({
-					"width" : "100%",
-					"height" : calculateSVGHeight().toString()
+				$("#header").css({
+					"height": calculateHeaderHeight().toString()
 				});
 			}); 
-
-			function scrollToSection(event, element) {
-				event.preventDefault();
-
-				var yPos = $(element).position().top - 100;
-
-				TweenMax.to(window, 1.5, {scrollTo:{y:yPos, autoKill:false}, ease:Power2.easeOut});
-			}
-
-			function addInteractiveHeader() {
-				$("#svg").css({
-					"width" : "100%",
-					"height" : calculateSVGHeight().toString()
-				});
-
-				var draw = Snap("#svg");
-
-				Snap.load("images/SVG/InteractiveHeader.svg", function(element) {
-					draw.append(element);
-				});
-			}
-
-			function animateHeader() {
-				var timeline = new TimelineMax();
-				//var classes = ['.st0','.st1','.st2', '.st3', '.st4', '.st5', '.st6'];
-				var classes = ['.st0','.st1','.st2', '.st3', '.st4'];
-
-				for (var i = 0; i < classes.length; i++) {
-					
-					var $paths = $("#HeaderAnim " + classes[i]);
-
-					$paths.css({
-						"transition":"none",
-						"opacity":"0"
-					});
-
-					// Set up strokes and initials settings for the individual elements
-					for (var j = 0; j < $paths.length; j++) {
-						var length = 0;
-						try {
-							length = $paths[j].getTotalLength();
-						} catch(err) {
-							console.log("Can't get total length! Element not a path. Element is type: " + $paths[j].tagName);
-							continue;
-						}
-						// Set the dash array and offset to the length of the path	
-						TweenMax.set($paths[j], {strokeDasharray:(length + " " + length), strokeDashoffset:length});
-						// Trigger a layout so styles are calculated & the browser
-						// picks up the starting position before animating
-						$paths[j].getBoundingClientRect();	
-					}
-
-					// Define our transition
-					switch($paths.attr("class")) {		
-						case "st1":
-						case "st2":
-						case "st4":
-							new TimelineMax().to($paths, 0, {opacity:"1"}).to($paths, 2, {strokeDashoffset:"0", ease:Linear.noEase});
-							break;
-						case "st3":
-							new TimelineMax().to($paths, 0, {opacity:"1", delay:"1.5"}).to($paths, 2, {strokeDashoffset:"0", ease:Linear.noEase});
-							break;
-					}
-				}
-
-				var $circle = $("#Circle .st0");
-				new TimelineMax().to($circle, 0, {opacity:"1", delay:"3.16"}).to($circle, 3, {strokeDashoffset:"0", ease:Power4.easeOut});
-
-				// Define transition for particular lines
-				var $leftLine = $("#LeftLine");
-				$leftLine.css({"transition":"none"});
-				new TimelineMax().to($leftLine, 0, {opacity:"1", delay:"3.51"}).to($leftLine, 3, {strokeDashoffset:"0", ease:Power4.easeOut, yoyo:true});
-
-				var $rightLine = $("#RightLine");
-				$rightLine.css({"transition":"none"});
-				new TimelineMax().to($rightLine, 0, {opacity:"1", delay:"3.75"}).to($rightLine, 3, {strokeDashoffset:"0", ease:Power4.easeOut});
-
-				var $buttonLines = $("#ButtonLines").children();
-				$buttonLines.css({"transition":"none"});
-				new TimelineMax().to($buttonLines[0], 0, {opacity:"1", delay:"3.75"}).to($buttonLines[0], 1.5, {strokeDashoffset:"0", ease:Power4.easeOut, onComplete:function() {
-					// Linked in
-					$("#LinkedInButton .Link").children().css({
-						"opacity":"1"
-					});
-				}});
-				new TimelineMax().to($buttonLines[1], 0, {opacity:"1", delay:"4.18"}).to($buttonLines[1], 1.5, {strokeDashoffset:"0", ease:Power4.easeOut, onComplete:function() {
-					// Twitter
-					$("#TwitterButton .Link").children().css({
-						"opacity":"1"
-					});
-				}});
-				new TimelineMax().to($buttonLines[2], 0, {opacity:"1", delay:"4.39"}).to($buttonLines[2], 1.5, {strokeDashoffset:"0", ease:Power4.easeOut, onComplete:function() {
-					// GooglePlus
-					$("#GooglePlusButton .Link").children().css({
-						"opacity":"1"
-					});				
-				}});
-				new TimelineMax().to($buttonLines[3], 0, {opacity:"1", delay:"4.1"}).to($buttonLines[3], 1.5, {strokeDashoffset:"0", ease:Power4.easeOut, onComplete:function() {
-					// Blog
-					$("#BlogButton .Link").children().css({
-						"opacity":"1"
-					});
-				}});
-				new TimelineMax().to($buttonLines[4], 0, {opacity:"1", delay:"3.64"}).to($buttonLines[4], 1.5, {strokeDashoffset:"0", ease:Power4.easeOut, onComplete:function() {
-					// Github
-					$("#GithubButton .Link").children().css({
-						"opacity":"1"
-					});
-				}});
-
-				
-			}
 		</script>
 	</body>
 </html>

@@ -415,15 +415,7 @@
 			"file": "Projects.html",
 			"settings":
 			{
-				"buffer_size": 8070,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "images/Brain.svg",
-			"settings":
-			{
-				"buffer_size": 11289,
+				"buffer_size": 11136,
 				"line_ending": "Windows"
 			}
 		},
@@ -481,9 +473,9 @@
 	},
 	"file_history":
 	[
+		"/D/Programming/Web/WeeblySite/images/Brain.svg",
 		"/C/Users/ryan2/AppData/Local/Temp/newhope3.svg",
 		"/D/Programming/Web/WeeblySite/scripts/jQueryTransit.js",
-		"/D/Programming/Web/WeeblySite/images/Brain.svg",
 		"/D/Programming/Web/WeeblySite/scripts/ProgrammingProjectSelector.js",
 		"/D/Programming/Web/WeeblySite/scripts/AutoScroller.js",
 		"/D/Programming/Web/WeeblySite/landing.html",
@@ -551,7 +543,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -560,15 +552,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8070,
+						"buffer_size": 11136,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8041,
-								8041
+								0,
+								0
 							]
 						],
 						"settings":
@@ -577,42 +569,14 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3213.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "images/Brain.svg",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 11289,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								251,
-								251
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/XML/XML.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 289.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 1,
 					"file": "scripts/ProgrammingProjectSelector.js",
 					"semi_transient": false,
 					"settings":
@@ -637,7 +601,7 @@
 						"translation.y": 127.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
