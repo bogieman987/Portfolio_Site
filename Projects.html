@@ -5,229 +5,244 @@
 		<title>Test</title>
 		<style type="text/css">
 			body {
+				min-width: 440px;
 				margin: 0 0;
+				overflow-x: hidden;
+			}
+			h1, h2, p, ul, li {
+				color: white;
+			}
+			h1, h2 {	
+				font-family: 'Signika', sans-serif;
+				text-align: center;	
 			}
 			h1 {
-				font-size: 50px;
-				font-family: sans-serif;
-				text-align: center;
-				color: white;
-				background-color: #05163C;
-				padding-bottom: 2px;
-				border-top: 0px solid;
-				border-top-left-radius: 20px;
-				border-top-right-radius: 20px;
-				margin: 0;
+				font-size: 3em;
 			}
 			p {
 				padding: 20px;
-				margin: 0;
-			}
-			#bar {
-				display: table;
-				position: fixed;
-				top: 0;
-				width: 100%;
-				padding-top: 10px;
-				padding-bottom: 10px;
-				background: rgba(35, 35, 35, 0.95);
-				z-index: 100;
-
-			}
-			#barContainer {
-				display: table;
-				overflow-y: hidden;
-				width: 100%;
 				margin: 0 auto;
-			}
-			#logo {
-				display: table-cell;
-				overflow-y: hidden;
-				margin-right: 30px;
-				padding: 0;
-				vertical-align: middle;
-				line-height: normal;
-			}
-			#logo h2 {
-				display: block;
-				vertical-align: top;
-				font-size: 40px;
-				font-family: sans-serif;
-				text-align: left;
-				color: white;
-				margin: 0 30px 0 10px;
-				padding-left: 20px;
-				max-width: 400px;
-			}
-			#buttonBar {
-				display: table-cell;
-				overflow-y: hidden;
-				padding: 0;
-				vertical-align: middle;
-			}
-			#buttonList {
-				float: right;
-				overflow: hidden;
-				max-width: 1115px;
-				margin: 0;
-				padding: 0;
-			}
-			.button {
-				display: inline-block;
-				margin-right: 5px;
-				padding: 0;	
-			}
-			.buttonText {
-				display: block;
-				border: 2px solid #ffffff;
-				padding: 8px 12px;
-				border-radius: 2px;
-				color: #ffffff;
-				text-transform: uppercase;
-				text-decoration: none;
-				letter-spacing: 0.05em;
-				font-size: 14px;
-				font-family: "Lato", sans-serif;
-				font-weight: 700;
-				line-height: normal;
-			}
-			#header {
-				width: 100%;
-			}
-			.mainContainer {
-				max-width: 1520px;
-				margin: 0 auto;
-				padding-bottom: 20px;
-				overflow-y: hidden;				
-			}
-			.subContainer {	
-				height: 900px;	
-			}
-			.contentContainer {
-				max-width: 960px;
-				min-width: 700px;
-				height: 100%;
-				border: 0px solid;
-				border-radius: 20px;	
-				box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-				background: #ffffff;
-				margin: 0 auto;
-			}
-			.separator {
-				height: 250px;
-			}
-			#home {
-				background-color: #123888;
-				background: url(images/Background.png);
-				background-repeat: no-repeat;
-				background-position: 50% 0;
-				
-				padding-top: 100px;
-				padding-bottom: 250px;
-			}
-			#home .contentContainer {
-				background-color: transparent;
-				box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
-				height: 60%;
-				border: 7px solid white;
 			}	
-			#home h1 {
-				background: transparent;
-				border-bottom: 7px solid white;
+			a h2, ul h2 {
+				font-family: 'Nunito', sans-serif;
 			}
-			#home p {
-				color: white;
-				font-family: 'Katibeh', cursive;
-				font-size: 1.5em;
+			ul {
+				margin: 0;
 			}
-			#brain {
-				padding: 30px 0 30px 0;
-				background-color: transparent;
-				z-index: 1;
+			.informationBox {
+				font-family: 'Abel', sans-serif;
+				font-size: 1.25em;
+				float: left;
+				width: 350px;
+				margin: auto;
 			}
-			.cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .link {
-				stroke-linecap: round;
-				opacity: 0;
+			.informationBox h2 {
+				text-align: left;
+				font-size: 1.3em;
+				margin: 10px 0 5px 5px;
 			}
-			.headerButton {
-				display: none;
+			.informationBox ul {
+				list-style-type: none;
 			}
-			#github {
-				background-color: #1b52c6;
+			.spacer {
+				padding: 200px 0;
 			}
-			button {
-				display: table;
+			#contentContainer {
+				margin: 50px 0;
+			}
+			#info {
+				margin: 0 auto;
+				width: 66%;
+			}
+			#infoContainer {
+				min-width: 701.6px;
+				width: 702px;	
+				height: 300px;
 				margin: 0 auto;
 			}
-			.link:hover circle {
-				fill: grey;
+			#infoSeparator {
+				position: relative;
+				top: 20px;
+				float: left;
+				width: 0;
+				height: 250px;
+				border: 1px solid white;
 			}
-			#linkedInButton .link:hover circle {
+			#photo {
+				float: left;
+				width: 128px;
+				margin-right: 20px;
+			}
+			#javaBadges {
+				width: 100%;
+				height: 300px;
+			}
+			#navigation {
+				min-width: 440px;
+				overflow: hidden;
+				margin: 10px auto;
+			}
+			#navigation ul {
+				width: 488px;
+				margin: 0 auto;
+				padding: 0;
+			}
+			#navigation li {
+				width: 140px;
+				display: inline-block;
+				list-style-type: none;
+				margin: 0 10px;
+				padding: 0;
+			}
+			#navigation a {
+				font-family: 'Candal', sans-serif;
+				margin: 0 auto;
+				text-decoration: none;
+				text-transform: uppercase;
+				text-shadow: 0 0 0 #000;
+			}
+			#navigation a:hover {
+				text-decoration: underline;
+				text-decoration-color: white;
+			}
+			#navigation a:focus {
+				outline: none;
+			}
+			#navigation h2 {
+				border: 2px solid transparent;
+				border-radius: 15px;
+			}
+			#navigation a:focus h2 {
+				border-color: white;
+			}
+			#buttons {
+				width: 100%;
+			}
+			#bg {
+				display: inline;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				background: url(images/Background.png);
+				background-repeat: no-repeat;	
+				background-size: 100% 100%;
+				z-index: -1;
+			}
+			.link path {
+				pointer-events: none;
+			}
+			#linkedInButton .link:hover circle, #linkedInButton .link:focus circle {
 				fill: rgb(0, 119, 181);
 			}
-			#twitterButton .link:hover circle {
+			#twitterButton .link:hover circle, #twitterButton .link:focus circle {
 				fill: rgb(85, 172, 238);
 			}
-			#googlePlusButton .link:hover circle {
+			#googlePlusButton .link:hover circle, #googlePlusButton .link:focus circle {
 				fill: rgb(220, 78, 65);
 			}
-			#blogButton .link:hover circle {
+			#blogButton .link:hover circle, #blogButton .link:focus circle {
 				fill: rgb(255, 102, 0);
 			}
-			#githubButton .link:hover circle {
+			#githubButton .link:hover circle, #githubButton .link:focus circle {
 				fill: black;
+			}
+			.link:focus circle {
+				stroke: black;
+			}
+			@media only screen and (max-width: 840px) {
+				h1 {
+					min-width: 0;
+				}
+				ul {
+					padding: 0;
+				}
+				.informationBox {
+					float: none;
+				}
+				.informationBox h2 {
+					text-align: center;
+					margin: 10px 0 5px 0;
+				}
+				.spacer {
+					padding: 0 0;
+				}
+				#infoContainer {
+					min-width: 0;
+					width: 100%;
+					height: 100%;
+				}
+				#infoSeparator {
+					top: 0;
+					float: none;
+					width: 250px;
+					height: 0;
+					margin: 0 auto;
+				}
+				#languages {
+					text-align: center;
+				}
 			}
 		</style>
 
-		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Katibeh" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=Candal" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> 
 	</head>
 	<body>
-		<div id="bar">
-			<div id="barContainer">
-				<div id="logo">
-					<h2>Test site</h2>
-				</div>
-				<div id="buttonBar">
-					<ul id="buttonList">
-						<li class="button">
-							<a class="buttonText" href="/" onclick="scrollToSection(event, '#home')">Home</a>
-						</li>
-						<li class="button">
-							<a class="buttonText" href="/" onclick="scrollToSection(event, '#about')">About</a>
-						</li>
-						<li class="button">
-							<a class="buttonText" href="/" onclick="scrollToSection(event, '#github')">Project Selector</a>
-						</li>
-						<li class="button">
-							<a class="buttonText" href="/" onclick="scrollToSection(event, '#contact')">Contact</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-			
 		<div class="mainContainer">
-			<div id="home" class="subContainer">
-				<svg id="header"></svg>
-				<button onclick="animateHeader()">Start Animation</button>
-				<div class="contentContainer">
-					<h1>About</h1>
-					<p>A little bit of information about myself</p>
+			<div id="bg"></div>
+			<div id="contentContainer" class="about">
+				<div id="info">
+					<h1>Ryan Sweeney</h1>
+					<div id="infoContainer">
+						<div id="bio" class="informationBox">				
+							<img id="photo" src="images/Logos/BlogIcon.png" alt="Photograph">
+							<p>I'm a 21 year old aspiring programmer from Co.Donegal, Republic of Ireland.</p>
+							<p>My life goal is to own a game development studio however I want to work in other parts of the industry before that.</p>
+						</div>
+						<div id="infoSeparator"></div>
+						<div id="languages" class="informationBox">
+							<h2>Languages I Actively Use</h2>
+							<ul>
+								<li>Java SE7</li>
+								<li>HTML</li>
+								<li>CSS</li>
+								<li>Javascript</li>
+							</ul>
+							<h2>Languages I've Used Before</h2>
+							<ul>
+								<li>C++</li>
+								<li>C#</li>
+								<li>SQL</li>
+							</ul>
+						</div>
+					</div>
 				</div>
+			</div>			
+			<div id="navigation">
+				<ul>
+					<li>
+						<a href="/" onclick="setContentContainerData('about')">
+							<h2>About</h2>
+						</a>
+					</li>
+					<li>
+						<a href="/" onclick="setContentContainerData('projects')">
+							<h2>Projects</h2>
+						</a>						
+					</li>
+					<li>
+						<a href="/" onclick="setContentContainerData('contact')">
+							<h2>Contact</h2>
+						</a>		
+					</li>
+				</ul>
 			</div>
-			<div class="separator"></div>
-			<div id="github" class="subContainer">
-				<div class="contentContainer">
-					<h1>Github</h1>
-				</div>				
-			</div>
-			<div class="separator"></div>
-			<div id="contact" class="subContainer">
-				<div class="contentContainer">
-					<h1>Contact</h1>
-				</div>				
-			</div>
+			<svg id="buttons"></svg>
 		</div>
 		
 		<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
@@ -235,19 +250,45 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/plugins/ScrollToPlugin.min.js"></script>
 		<script src="scripts/snap.svg.js"></script>
 		<script src="scripts/scroller.js"></script>
-		<script src="scripts/interactiveHeader.js"></script>
+		<script src="scripts/followButtons.js"></script>
 		<script type="text/javascript">
 			$(window).ready(function() {
-				// Set up animation when window loads
-				addInteractiveHeader();
+				// TODO - fix github logo
+				addFollowButtons();
+				setBackgroundHeight();
+				loadJavaBadge();
 			});
 
-			// Update the size of the svg 
 			$(window).resize(function() {
-				$("#header").css({
-					"height": calculateHeaderHeight().toString()
-				});
+				setTimeout(function() {
+					$("#bg").css({
+						"height": (screen.width * 0.75),
+						"width": (parseFloat($("#bg").css("height")) * 1.333)
+					});
+				}, 100);
 			}); 
+
+			function setBackgroundHeight() {
+				$("#bg").css({
+					"height": (screen.width * 0.75)
+				});
+			}
+
+			function setContentContainerData(tab) {
+				var contContainer = $("#contentContainer");
+
+				contContainer.removeClass();
+				contContainer.addClass(tab);
+
+				switch(tab) {
+					case "about":
+					break;
+					case "projects":
+					break;
+					case "contact":
+					break;
+				}
+			}
 		</script>
 	</body>
 </html>
