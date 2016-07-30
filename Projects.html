@@ -3,185 +3,179 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Test</title>
-		<style type="text/css">
+		<style type="text/css">					
 			body {
+				height: 100%;
 				min-width: 440px;
 				margin: 0 0;
 				overflow-x: hidden;
-			}
-			h1, h2, p, ul, li {
+				text-align: center;
 				color: white;
+				background-color: #1c54c7;
 			}
-			h1, h2 {	
-				font-family: 'Signika', sans-serif;
-				text-align: center;	
+			h1, h2, h3, h4 {
+				font-family: 'Work Sans', sans-serif;
+			}
+			p, ul, li {
+				font-family: 'Abel', sans-serif;
 			}
 			h1 {
-				font-size: 3em;
+				font-size: 4em;
+			}
+			h2 {
+				font-size: 2.5em;
+			}
+			h3 {	
+				font-size: 1.25em;
 			}
 			p {
-				padding: 20px;
+				padding: 10px;
 				margin: 0 auto;
 			}	
-			a h2, ul h2 {
-				font-family: 'Nunito', sans-serif;
+			a {
+				color: white;
 			}
 			ul {
 				margin: 0;
 			}
-			.informationBox {
-				font-family: 'Abel', sans-serif;
-				font-size: 1.25em;
-				float: left;
-				width: 350px;
-				margin: auto;
+			td, tr {
+				height: 100%;
 			}
-			.informationBox h2 {
-				text-align: left;
-				font-size: 1.3em;
-				margin: 10px 0 5px 5px;
-			}
-			.informationBox ul {
-				list-style-type: none;
-			}
-			.spacer {
-				padding: 200px 0;
-			}
-			#contentContainer {
-				margin: 50px 0;
-			}
-			#info {
-				margin: 0 auto;
-				width: 66%;
-			}
-			#infoContainer {
-				min-width: 701.6px;
-				width: 702px;	
-				height: 300px;
-				margin: 0 auto;
-			}
-			#infoSeparator {
-				position: relative;
-				top: 20px;
-				float: left;
-				width: 0;
-				height: 250px;
-				border: 1px solid white;
-			}
-			#photo {
-				float: left;
-				width: 128px;
-				margin-right: 20px;
-			}
-			#javaBadges {
-				width: 100%;
-				height: 300px;
-			}
-			#navigation {
-				min-width: 440px;
-				overflow: hidden;
-				margin: 10px auto;
-			}
-			#navigation ul {
-				width: 488px;
-				margin: 0 auto;
-				padding: 0;
-			}
-			#navigation li {
-				width: 140px;
-				display: inline-block;
-				list-style-type: none;
-				margin: 0 10px;
-				padding: 0;
-			}
-			#navigation a {
-				font-family: 'Candal', sans-serif;
-				margin: 0 auto;
-				text-decoration: none;
-				text-transform: uppercase;
-				text-shadow: 0 0 0 #000;
-			}
-			#navigation a:hover {
-				text-decoration: underline;
-				text-decoration-color: white;
-			}
-			#navigation a:focus {
-				outline: none;
-			}
-			#navigation h2 {
-				border: 2px solid transparent;
-				border-radius: 15px;
-			}
-			#navigation a:focus h2 {
-				border-color: white;
-			}
-			#buttons {
-				width: 100%;
-			}
-			#bg {
-				display: inline;
+			.main-container {
 				position: absolute;
 				top: 0;
 				left: 0;
 				width: 100%;
+				height: 850px;
 				background: url(images/Background.png);
 				background-repeat: no-repeat;	
-				background-size: 100% 100%;
-				z-index: -1;
+				background-size: 100% 105%;
+				z-index: 1;
+			}
+			.content-container {
+				margin: 20px 0;
+			}
+			.content-subheader {
+				margin: 30px 0;
+			}
+			.content-subheader h2, .content-subheader p {
+				margin: 0;
+				padding: 0;
+			}
+			.vert-rule {
+				height: 80%;
+				margin: auto 10px;
+				border: 1px solid white;
+			}
+			.multicol {
+				position: relative;
+				direction: ltr;
+				border-collapse: collapse;
+				table-layout: fixed;
+				width: 66%;
+				margin: 0 auto;
+				border: 0;
+				padding: 0;
+			}
+			.multicol-table {
+				margin: 0 auto;
+			}
+			.multicol-col {
+				vertical-align: top;
+			}
+			.info-box {
+				font-family: 'Abel', sans-serif;
+				font-size: 1.25em;
+				text-align: left;
+			}
+			.info-box h3 {
+				font-family: 'Nunito', sans-serif;
+				padding: 10px 0;
+				margin: 0;
+			}
+			.info-box ul {
+				list-style-type: none;
+			}
+			.info-box-about {
+				width: 350px;
+			}
+			.image-small {
+				width: 128px;
+				margin-right: 20px;
+			}
+			.image-small#photo {
+				float: left;
+			}
+			.content-nav-container {
+				height: 45px;
+				margin: 20px 0;
+			}
+			.content-nav-button-container {
+				position: relative;
+				top: 50%;
+				transform:  translateY(-50%);
+			}
+			.content-nav-button {
+				width: 10%;
+				height: 35px;
+				margin: auto 10px;
+				color: white;
+				background-color: transparent;;
+				border: 2px solid transparent;
+				border-radius: 15px;
+				font-family: 'Nunito', sans-serif;
+				font-size: 1.5em;
+				text-transform: uppercase;
+				box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+				transition: box-shadow 0.25s, width 0.25s, height 0.25s;
+			}
+			.content-nav-button:hover {
+				border-color: white;
+				color: #1c54c7;
+				background-color: white;
+				width: 11%;
+				height: 40px;
+				box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
+			}
+			.content-nav-button:focus {	
+				border-color: white;
+				text-decoration: underline;
+			}
+			.content-nav-button-current {
+				border-color: white;
+			}
+			#follow-buttons {
+				width: 100%;
+			}
+			#follow-buttons {
+				margin: 20px 0;
 			}
 			.link path {
 				pointer-events: none;
 			}
-			#linkedInButton .link:hover circle, #linkedInButton .link:focus circle {
-				fill: rgb(0, 119, 181);
-			}
-			#twitterButton .link:hover circle, #twitterButton .link:focus circle {
-				fill: rgb(85, 172, 238);
-			}
-			#googlePlusButton .link:hover circle, #googlePlusButton .link:focus circle {
-				fill: rgb(220, 78, 65);
-			}
-			#blogButton .link:hover circle, #blogButton .link:focus circle {
-				fill: rgb(255, 102, 0);
-			}
-			#githubButton .link:hover circle, #githubButton .link:focus circle {
-				fill: black;
-			}
 			.link:focus circle {
 				stroke: black;
 			}
+			#google-plus-button .link:hover circle, #google-plus-button .link:focus circle {
+				fill: rgb(220, 78, 65);
+			}
+			#twitter-button .link:hover circle, #twitter-button .link:focus circle {
+				fill: rgb(85, 172, 238);
+			}
+			#linked-in-button .link:hover circle, #linked-in-button .link:focus circle {
+				fill: rgb(0, 119, 181);
+			}
+			#github-button .link:hover circle, #github-button .link:focus circle {
+				fill: black;
+			}
+			#blog-button .link:hover circle, #blog-button .link:focus circle {
+				fill: rgb(255, 102, 0);
+			}
+			#hidden-content {
+				display: none;
+			}
 			@media only screen and (max-width: 840px) {
-				h1 {
-					min-width: 0;
-				}
-				ul {
-					padding: 0;
-				}
-				.informationBox {
-					float: none;
-				}
-				.informationBox h2 {
-					text-align: center;
-					margin: 10px 0 5px 0;
-				}
-				.spacer {
-					padding: 0 0;
-				}
-				#infoContainer {
-					min-width: 0;
-					width: 100%;
-					height: 100%;
-				}
-				#infoSeparator {
-					top: 0;
-					float: none;
-					width: 250px;
-					height: 0;
-					margin: 0 auto;
-				}
-				#languages {
-					text-align: center;
-				}
+
 			}
 		</style>
 
@@ -193,70 +187,91 @@
 		<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> 
 	</head>
 	<body>
-		<div class="mainContainer">
-			<div id="bg"></div>
-			<div id="contentContainer" class="about">
-				<div id="info">
-					<h1>Ryan Sweeney</h1>
-					<div id="infoContainer">
-						<div id="bio" class="informationBox">				
-							<img id="photo" src="images/Logos/BlogIcon.png" alt="Photograph">
-							<p>I'm a 21 year old aspiring programmer from Co.Donegal, Republic of Ireland.</p>
-							<p>My life goal is to own a game development studio however I want to work in other parts of the industry before that.</p>
+		<div class="main-container">
+			<div class="content-container">
+				<div id="about-content">
+					<h1 class="content-header">About</h1>
+					<div>
+						<div class="content-subheader">
+							<h2>Ryan Sweeney</h2>
+							<p>("Airth" is my unofficial surname)</p>
 						</div>
-						<div id="infoSeparator"></div>
-						<div id="languages" class="informationBox">
-							<h2>Languages I Actively Use</h2>
-							<ul>
-								<li>Java SE7</li>
-								<li>HTML</li>
-								<li>CSS</li>
-								<li>Javascript</li>
-							</ul>
-							<h2>Languages I've Used Before</h2>
-							<ul>
-								<li>C++</li>
-								<li>C#</li>
-								<li>SQL</li>
-							</ul>
-						</div>
+						<div class="multicol">				
+							<table class="multicol-table">
+								<tr>
+									<td class="multicol-col">
+										<div class="info-box info-box-about">
+											<img id="photo" class="image-small" src="images/Logos/BlogIcon.png" alt="Photograph">
+											<p>I'm a 21 year old aspiring programmer from Co.Donegal, Republic of Ireland.</p>
+											<p>My life goal is to own a game development studio however I want to work in other parts of the industry before that.
+										</div>
+									</td>
+									<td>
+										<div class="vert-rule"></div>
+									</td>					
+									<td class="multicol-col">
+										<div class="info-box info-box-about">
+											<h3>Languages I Actively Use</h3>
+											<ul>
+												<li>Java SE7</li>
+												<li>HTML</li>
+												<li>CSS</li>
+												<li>Javascript</li>
+											</ul>
+											<h3>Languages I've Used Before</h3>
+											<ul>
+												<li>C++</li>
+												<li>C#</li>
+												<li>SQL</li>
+											</ul>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>	
 					</div>
+				</div>	
+			</div>	
+
+			<div class="content-nav-container">
+				<div class="content-nav-button-container">
+					<button id="about-button" class="content-nav-button">About</button>
+					<button id="projects-button" class="content-nav-button">Projects</button>
+					<button id="contact-button" class="content-nav-button">Contact</button>
 				</div>
-			</div>			
-			<div id="navigation">
-				<ul>
-					<li>
-						<a href="/" onclick="setContentContainerData('about')">
-							<h2>About</h2>
-						</a>
-					</li>
-					<li>
-						<a href="/" onclick="setContentContainerData('projects')">
-							<h2>Projects</h2>
-						</a>						
-					</li>
-					<li>
-						<a href="/" onclick="setContentContainerData('contact')">
-							<h2>Contact</h2>
-						</a>		
-					</li>
-				</ul>
 			</div>
-			<svg id="buttons"></svg>
+
+			<svg id="follow-buttons"></svg>
+
+			<div id="hidden-content">
+				<div id="projects-content">
+					
+				</div>
+				<div id="contact-content">
+					
+				</div>
+			</div>
 		</div>
 		
 		<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/plugins/ScrollToPlugin.min.js"></script>
 		<script src="scripts/snap.svg.js"></script>
-		<script src="scripts/scroller.js"></script>
 		<script src="scripts/followButtons.js"></script>
 		<script type="text/javascript">
+			// TODO - fix github logo
+			// TODO - give each navigation button separate little container so they don't move the other buttons
 			$(window).ready(function() {
-				// TODO - fix github logo
+				$("#bg").on("load", function() {
+					$("body").css({"background-color": "white"});
+				});
+
 				addFollowButtons();
 				setBackgroundHeight();
-				loadJavaBadge();
+
+				$("#about-button").addClass("content-nav-button-current");
+
+				setUpButtons();
 			});
 
 			$(window).resize(function() {
@@ -265,7 +280,7 @@
 						"height": (screen.width * 0.75),
 						"width": (parseFloat($("#bg").css("height")) * 1.333)
 					});
-				}, 100);
+				}, 200);
 			}); 
 
 			function setBackgroundHeight() {
@@ -274,20 +289,52 @@
 				});
 			}
 
-			function setContentContainerData(tab) {
-				var contContainer = $("#contentContainer");
+			function setContentContainerData(contentType) {
+				var contContainer = $(".content-container");
 
 				contContainer.removeClass();
-				contContainer.addClass(tab);
+				contContainer.addClass(contentType);
 
-				switch(tab) {
+				switch(contentType) {
 					case "about":
-					break;
+						console.log("About button pressed!");
+						break;
 					case "projects":
-					break;
+						console.log("Projects button pressed!");
+						break;
 					case "contact":
-					break;
+						console.log("Contact button pressed!");
+						break;
 				}
+			}
+
+			function setUpButtons() {
+				var buttons = $(".content-nav-button");
+
+				buttons.on("click", function(event) {
+					var button = $(this);
+
+					if(!(button.hasClass("content-nav-button-current"))) {
+						$(".content-nav-button-current").removeClass("content-nav-button-current");
+						button.addClass("content-nav-button-current");
+
+						setContentContainerData(button.attr("id").split("-")[0]);
+					}
+				});
+
+				// TODO - set only effects single button at a time
+				// From boxShadow: "0 8px 8px rgba(0, 0, 0, 0.5)"
+				// To boxShadow: "0 0 0 rgba(0, 0, 0, 0.5)"
+				// remap(value, 0, 50, -1, 5)
+				/*buttons.hover(function(event) {
+					TweenMax.set(buttons, {css:{boxShadow: "0 0 0 rgba(0, 0, 0, 0.5)"}});
+
+					TweenMax.to(buttons, 0.25, {css:{width: "11%", height: "40px"}, ease:Linear.easeNone});
+				}, function(event) {
+					TweenMax.to(buttons, 0.25, {css:{width: "10%", height: "35px"}, ease:Bounce.easeOut, onComplete: function() {
+						TweenMax.set(buttons, {css:{boxShadow: "0 0 0 rgba(0, 0, 0, 0)"}});
+					}});
+				});*/
 			}
 		</script>
 	</body>

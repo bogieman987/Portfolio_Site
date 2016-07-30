@@ -1,6 +1,6 @@
 function addFollowButtons() {
 	// Main SVG drawing area
-	var svgId = "#buttons",
+	var svgId = "#follow-buttons",
 		draw = Snap(svgId);
 	// Shadow filters, one with and one without
 	draw.filter(Snap.filter.shadow(0, 0, -1, 3));
@@ -10,7 +10,7 @@ function addFollowButtons() {
 		//draw.append(fragment);	
 		draw.append(fragment);
 
-		var buttons = Snap.selectAll(".followButton"),
+		var buttons = Snap.selectAll(".follow-button"),
 			scale = 0.65,
 			timeUp = 150,
 			timeDown = 250,
