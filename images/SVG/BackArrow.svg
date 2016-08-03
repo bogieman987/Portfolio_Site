@@ -1,0 +1,17 @@
+<svg id="Arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+	<defs>
+		<style>
+			.cls-1 {
+				fill: none;
+				stroke: #fff;
+				stroke-miterlimit: 10;
+				stroke-width: 2px;
+			}
+			.cls-2 {
+				fill: #fff;
+			}
+		</style>
+	</defs>
+	<circle id="Outer" class="cls-1" cx="32" cy="32" r="31"/>
+	<path id="Inner" class="cls-2" d="M32,1A31,31,0,1,0,63,32,31,31,0,0,0,32,1ZM50,38H25.21l4,3.51a4.7,4.7,0,0,1,0,6.79,5,5,0,0,1-7-.1L9.55,35.5a5,5,0,0,1,0-6.94l12.6-12.65a5,5,0,0,1,7,0,5.62,5.62,0,0,1,0,7.54L25.2,28H50a4.85,4.85,0,0,1,5,5A5,5,0,0,1,50,38Z"/>
+</svg>

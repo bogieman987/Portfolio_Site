@@ -5,13 +5,14 @@
 		<title>Test</title>
 		<style type="text/css">					
 			body {
-				height: 100%;
-				min-width: 440px;
 				margin: 0 0;
-				overflow-x: hidden;
 				text-align: center;
 				color: white;
 				background-color: #1c54c7;
+				overflow: hidden;
+			}
+			article {
+				text-align: left;
 			}
 			h1, h2, h3, h4 {
 				font-family: 'Work Sans', sans-serif;
@@ -32,9 +33,6 @@
 				padding: 10px;
 				margin: 0 auto;
 			}	
-			a {
-				color: white;
-			}
 			ul {
 				margin: 0;
 			}
@@ -42,46 +40,51 @@
 				height: 100%;
 			}
 			.main-container {
+				display: inline;
 				position: absolute;
 				top: 0;
 				left: 0;
 				width: 100%;
-				height: 850px;
-				background: url(images/Background.png);
-				background-repeat: no-repeat;	
-				background-size: 100% 105%;
-				z-index: 1;
+				height: 100%;
 			}
+			/* General content */
 			.content-container {
-				margin: 20px 0;
+				max-width: 65%;
+				height: 100%;
+				max-height: 75%;
+				overflow: hidden;
+				margin: 10px auto;
+			}
+			.portfolio-content {
+				height: 100%;
 			}
 			.content-subheader {
-				margin: 30px 0;
+				margin-bottom: 30px;
 			}
 			.content-subheader h2, .content-subheader p {
 				margin: 0;
 				padding: 0;
 			}
+			.content-subheader-projects {
+				width: 550px;
+				height: 64px;
+				margin: 0 auto;
+			}
 			.vert-rule {
-				height: 80%;
-				margin: auto 10px;
+				width: 0;
+				height: 100%;
+				margin: auto 1%;
 				border: 1px solid white;
+				float: left;
 			}
-			.multicol {
-				position: relative;
-				direction: ltr;
-				border-collapse: collapse;
-				table-layout: fixed;
-				width: 66%;
-				margin: 0 auto;
-				border: 0;
-				padding: 0;
-			}
-			.multicol-table {
+			.multicol-about {
+				width: 70%;
 				margin: 0 auto;
 			}
-			.multicol-col {
-				vertical-align: top;
+			.multicol-projects {
+				width: 80%;
+				height: 100%;
+				float: right;
 			}
 			.info-box {
 				font-family: 'Abel', sans-serif;
@@ -96,8 +99,36 @@
 			.info-box ul {
 				list-style-type: none;
 			}
-			.info-box-about {
-				width: 350px;
+			.projects {
+				height: 85%;
+			}
+			.projects-container {
+				width: 80.75%;
+				height: 100%;
+				float: right;
+			}
+			.project-selector {
+				width: 97.5%;
+				height: 100%;
+				float: right;
+			}
+			.projects-info-box {
+				width: 600px;
+				font-family: 'Abel', sans-serif;
+				text-align: left;
+			}
+			.projects-info-box h3 {
+				font-family: 'Nunito', sans-serif;
+				padding-left: 5px;
+				margin: 5px 0;
+				font-size: 1em;
+			}
+			.projects-info-box-desc h3 {
+				
+			}
+			.projects-info-box-features p {
+				margin: 0;
+				padding: 0;
 			}
 			.image-small {
 				width: 128px;
@@ -106,19 +137,44 @@
 			.image-small#photo {
 				float: left;
 			}
+			.image-icon {
+				width: 64px;
+				float: left;
+			}
+			.portfolio-link {
+				outline: none;
+				font-size: 1.25em;
+			}
+			.portfolio-link:link {
+				color: white;
+			}
+			.portfolio-link:visited {
+				color: #BBB;
+			}
+			.portfolio-link:hover {
+				color: #FFE050; 
+			}
+			.portfolio-link:active {
+				color: #C7A400;
+			}
+			/* Portfolio content navigation */
+			.nav-follow-buttons-container {
+				height: 160px;
+				overflow-y: hidden;
+			}
 			.content-nav-container {
 				height: 45px;
-				margin: 20px 0;
+				margin: 10px 0 5px 0;
 			}
 			.content-nav-button-container {
 				position: relative;
 				top: 50%;
 				transform:  translateY(-50%);
 			}
-			.content-nav-button {
-				width: 10%;
+			.content-nav-button, .projects-nav-button{
+				width: 140px;
 				height: 35px;
-				margin: auto 10px;
+				padding: 0;
 				color: white;
 				background-color: transparent;;
 				border: 2px solid transparent;
@@ -129,26 +185,65 @@
 				box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 				transition: box-shadow 0.25s, width 0.25s, height 0.25s;
 			}
-			.content-nav-button:hover {
-				border-color: white;
+			.content-nav-button:hover, .projects-nav-button:hover {
 				color: #1c54c7;
+				border-color: white;
 				background-color: white;
-				width: 11%;
+				width: 150px;
 				height: 40px;
 				box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
 			}
-			.content-nav-button:focus {	
+			.content-nav-button:focus, .projects-nav-button:hover {	
 				border-color: white;
 				text-decoration: underline;
+			}
+			.content-nav-button-top {
+				border-radius: 15px 15px 0 0;
+			}
+			.content-nav-button-right {
+				border-radius: 0 15px 15px 0;
+			}
+			.content-nav-button-bottom {
+				border-radius: 0 0 15px 15px;
+			}
+			.content-nav-button-left {
+				border-radius: 15px 0 0 15px;
+			}
+			.content-nav-button-center {
+				border-radius: 0;
 			}
 			.content-nav-button-current {
 				border-color: white;
 			}
+			/* Project navigation */
+			.project-directory {
+				float: right;
+				position: relative;
+				top: 50%;
+				transform:  translateY(-50%);
+			}
+			.project-directory a {
+				border: none;
+				color: white;
+				background-color: transparent;
+				text-decoration: underline;
+			}
+			.project-nav-container {
+				border: 1px solid white;
+				min-width: 180px;
+				width: 19%;
+				float: left;
+			}
+			.project-nav-button-container {
+				border: 1px solid grey;
+				width: 160px;
+				margin: 0 auto;
+			}
+			/* Social buttons */
 			#follow-buttons {
 				width: 100%;
-			}
-			#follow-buttons {
-				margin: 20px 0;
+				height: 100px;
+				margin: 5px 0 10px 0;
 			}
 			.link path {
 				pointer-events: none;
@@ -174,6 +269,7 @@
 			#hidden-content {
 				display: none;
 			}
+			/* Adaptivity */
 			@media only screen and (max-width: 840px) {
 
 			}
@@ -188,67 +284,124 @@
 	</head>
 	<body>
 		<div class="main-container">
-			<div class="content-container">
-				<div id="about-content">
-					<h1 class="content-header">About</h1>
-					<div>
-						<div class="content-subheader">
-							<h2>Ryan Sweeney</h2>
-							<p>("Airth" is my unofficial surname)</p>
-						</div>
-						<div class="multicol">				
-							<table class="multicol-table">
-								<tr>
-									<td class="multicol-col">
-										<div class="info-box info-box-about">
-											<img id="photo" class="image-small" src="images/Logos/BlogIcon.png" alt="Photograph">
-											<p>I'm a 21 year old aspiring programmer from Co.Donegal, Republic of Ireland.</p>
-											<p>My life goal is to own a game development studio however I want to work in other parts of the industry before that.
-										</div>
-									</td>
-									<td>
-										<div class="vert-rule"></div>
-									</td>					
-									<td class="multicol-col">
-										<div class="info-box info-box-about">
-											<h3>Languages I Actively Use</h3>
-											<ul>
-												<li>Java SE7</li>
-												<li>HTML</li>
-												<li>CSS</li>
-												<li>Javascript</li>
-											</ul>
-											<h3>Languages I've Used Before</h3>
-											<ul>
-												<li>C++</li>
-												<li>C#</li>
-												<li>SQL</li>
-											</ul>
-										</div>
-									</td>
-								</tr>
-							</table>
-						</div>	
-					</div>
+			<main class="content-container">
+				<div id="about-content" class="portfolio-content">
+					<header class="content-subheader">
+						<h2>Ryan Sweeney</h2>
+						<p>("Airth" is my unofficial surname)</p>
+					</header>
+					<article class="multicol-about">
+						<section class="info-box">
+							<img id="photo" class="image-small" src="images/Logos/BlogIcon.png" alt="Photograph">
+							<p>I'm a 21 year old aspiring programmer from Co.Donegal, Republic of Ireland.<br><br>My life goal is to own a game development studio however I want to work in other parts of the industry before that.<br>For example: web development or even a little indie title or two along the way.</p>
+						</section>
+						<section class="info-box">
+							<h3>Languages I Actively Use</h3>
+							<ul>
+								<li>Java SE7</li>
+								<li>HTML</li>
+								<li>CSS</li>
+								<li>Javascript</li>
+							</ul>
+							<h3>Languages I've Used Before</h3>
+							<ul>
+								<li>C++</li>
+								<li>C#</li>
+								<li>SQL</li>
+							</ul>
+						</section>
+					</article>
+					<h3><a class="portfolio-link" href="/">Click to download CV</a></h3>
 				</div>	
-			</div>	
+			</main>	
 
-			<div class="content-nav-container">
-				<div class="content-nav-button-container">
-					<button id="about-button" class="content-nav-button">About</button>
-					<button id="projects-button" class="content-nav-button">Projects</button>
-					<button id="contact-button" class="content-nav-button">Contact</button>
+			<nav class="nav-follow-buttons-container">
+				<div class="content-nav-container">
+					<div class="content-nav-button-container">
+						<button type="button" id="about-button" class="content-nav-button content-nav-button-left">About</button>
+						<button type="button" id="projects-button" class="content-nav-button content-nav-button-center">Projects</button>
+						<button type="button" id="contact-button" class="content-nav-button content-nav-button-right">Contact</button>
+					</div>
 				</div>
-			</div>
 
-			<svg id="follow-buttons"></svg>
-
+				<svg id="follow-buttons"></svg>
+			</nav>
+			
 			<div id="hidden-content">
-				<div id="projects-content">
-					
+				<div id="projects-content" class="portfolio-content">
+					<header class="content-subheader">
+						<div class="content-subheader-projects">		
+							<img class="image-icon" src="">
+							<div class="project-directory">
+								<p><span id="category">Temp</span> > <span id="project-name">Project Name</span></p>
+							</div>
+						</div>
+					</header>
+					<div class="projects">
+						<nav class="project-nav-container">
+							<div class="project-nav-button-container">
+								<button type="button" id="all-button" class="projects-nav-button content-nav-button-top">All</button>
+								<button type="button" id="java-button" class="projects-nav-button content-nav-button-center">Java</button>
+								<button type="button" id="android-button" class="projects-nav-button content-nav-button-center">Android</button>
+								<button type="button" id="cplusplus-button" class="projects-nav-button content-nav-button-bottom">C++</button>
+							</div>
+						</nav>
+						<div class="projects-container">
+							<div class="vert-rule"></div>
+							<div class="project-selector"></div>
+						</div>
+					</div>
 				</div>
-				<div id="contact-content">
-					
+				<div id="contact-content" class="portfolio-content">
+					<h1>Content from Weebly Site Goes here</h1>
+					<!--{content}-->
+				</div>
+
+				<img id="background-image" src="images/Background.png">
+
+				<!-- Add projects here -->
+				<div id="projects">					
+					<!-- Math Sheet Calculator-->
+					<article id="math-sheet-calculator" class="multicol-projects">
+						<section>
+							<header>
+								<h3><a class="portfolio-link" href="https://github.com/bogieman987/Math_Sheet_Calculator">Math Sheet Calculator - Github</a></h3>
+							</header>
+							<article>
+								<div class="projects-info-box-desc">
+									<p>A typical Android calculator app, the goal of creating this was to learn how to utilize the Android SDK in making an app, as well as learning various other aspects to app design such as creating a good UI with a good UX and a set of decent features</p>					
+								</div>
+								<div class="projects-info-box-features">
+									<h3>Main features:</h3>
+									<ul>
+										<li>
+											<p>Basic calculator functions (addition, subtraction, multiplication, division)<br>Status: <strong><em>complete</em></strong></p>
+										</li>
+										<li>
+											<p>Basic memory functions (store in memory, add value to stored memory value etc.)<br>Status: not started</p>			
+										</li>
+										<li>
+											<p>Scientific calculator functions (brackets, log, exponents etc.)<br>Status: <em>Started work, initial bracket support completed</em></p>
+										</li>
+										<li>
+											<p>Plotting sum to grid (may add support for graphs)<br>Status: not started</p>		
+										</li>
+										<li>
+											<p>Saving/Loading previous sums with ability to name (potential addition of being able to store online via free cloud storage options)<br>Status: not started</p>
+										</li>
+									</ul>
+								</div>
+							</article>
+						</section>
+						<section>
+							<!-- Example pictures go here-->
+						</section>
+					</article>
+
+					<!-- Bulls and Cows -->
+					<article id="bulls-and-cows" class="multicol-projects">
+						
+					</article>
 				</div>
 			</div>
 		</div>
@@ -258,83 +411,117 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/plugins/ScrollToPlugin.min.js"></script>
 		<script src="scripts/snap.svg.js"></script>
 		<script src="scripts/followButtons.js"></script>
+		<script src="scripts/portfolioTabChanger.js"></script>
 		<script type="text/javascript">
 			// TODO - fix github logo
 			// TODO - give each navigation button separate little container so they don't move the other buttons
 			$(window).ready(function() {
-				$("#bg").on("load", function() {
-					$("body").css({"background-color": "white"});
+				$("body").css({
+					"width": window.innerWidth + "px",
+					"height": window.innerHeight + "px"
 				});
 
 				addFollowButtons();
-				setBackgroundHeight();
-
-				$("#about-button").addClass("content-nav-button-current");
-
 				setUpButtons();
+				setUpBackgroundImage();
+				setUpColumns();
 			});
 
-			$(window).resize(function() {
-				setTimeout(function() {
-					$("#bg").css({
-						"height": (screen.width * 0.75),
-						"width": (parseFloat($("#bg").css("height")) * 1.333)
-					});
-				}, 200);
-			}); 
+			function setUpBackgroundImage() {
+				var backgroundWidth = window.innerWidth;
+				var backgroundHeight = backgroundWidth * 0.75;
+				
 
-			function setBackgroundHeight() {
-				$("#bg").css({
-					"height": (screen.width * 0.75)
+				$("#background-image").ready(function() {
+					$(".main-container").css({
+						"background": "url(images/Background.png)",
+						"background-repeat": "no-repeat",	
+						"background-size": backgroundWidth + "px " + backgroundHeight + "px",
+						"background-position": "center top",
+						"z-index": "1"
+					});
+					$("body").css({
+						"background-color": "#092F7F"
+					});
+					$("#background-image").remove();
 				});
 			}
 
-			function setContentContainerData(contentType) {
-				var contContainer = $(".content-container");
+			function setUpColumns() {
+				$(".multicol-about, .multicol-projects").css({
+					"column-count": "2",
+					"column-rule": "2px outset white"
+				});
+			}
 
-				contContainer.removeClass();
-				contContainer.addClass(contentType);
+			function getBackgroundDimentions() {
+				var dimen = $(".main-container").css("height") * 1.333 + $(".main-container").css("height");
+				console.log(dimen);
+				return dimen;
+			}
+
+			function setPortfolioContent(contentType) {		
+				$(".content-container .portfolio-content").appendTo($("#hidden-content"));
 
 				switch(contentType) {
 					case "about":
+						$("#about-content").appendTo($(".content-container"));
 						console.log("About button pressed!");
 						break;
 					case "projects":
+						$("#projects-content").appendTo($(".content-container"));
 						console.log("Projects button pressed!");
 						break;
 					case "contact":
+						$("#contact-content").appendTo($(".content-container"));
 						console.log("Contact button pressed!");
 						break;
 				}
 			}
 
 			function setUpButtons() {
+				$("#about-button").addClass("content-nav-button-current");
+
 				var buttons = $(".content-nav-button");
 
 				buttons.on("click", function(event) {
 					var button = $(this);
 
+					if(setButtonState(button)) {
+						setPortfolioContent(button.attr("id").split("-")[0]);
+					}
+
 					if(!(button.hasClass("content-nav-button-current"))) {
 						$(".content-nav-button-current").removeClass("content-nav-button-current");
 						button.addClass("content-nav-button-current");
 
-						setContentContainerData(button.attr("id").split("-")[0]);
+						
 					}
 				});
 
-				// TODO - set only effects single button at a time
-				// From boxShadow: "0 8px 8px rgba(0, 0, 0, 0.5)"
-				// To boxShadow: "0 0 0 rgba(0, 0, 0, 0.5)"
-				// remap(value, 0, 50, -1, 5)
-				/*buttons.hover(function(event) {
-					TweenMax.set(buttons, {css:{boxShadow: "0 0 0 rgba(0, 0, 0, 0.5)"}});
+				buttons = $(".projects-nav-button");
+				buttons.on("click", function(event) {
+					var button = $(this);
+					
+					if(setButtonState(button)) {
 
-					TweenMax.to(buttons, 0.25, {css:{width: "11%", height: "40px"}, ease:Linear.easeNone});
-				}, function(event) {
-					TweenMax.to(buttons, 0.25, {css:{width: "10%", height: "35px"}, ease:Bounce.easeOut, onComplete: function() {
-						TweenMax.set(buttons, {css:{boxShadow: "0 0 0 rgba(0, 0, 0, 0)"}});
-					}});
-				});*/
+					}
+				});
+			}
+
+			function setButtonState(button) {
+				if(!(button.hasClass("content-nav-button-current"))) {
+					$(".content-nav-button-current").removeClass("content-nav-button-current");
+					button.addClass("content-nav-button-current");	
+
+					return true;					
+				}
+
+				return false;
+			}
+
+			function animatePortfolioContentChange() {
+
 			}
 		</script>
 	</body>

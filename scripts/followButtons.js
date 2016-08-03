@@ -11,7 +11,7 @@ function addFollowButtons() {
 		draw.append(fragment);
 
 		var buttons = Snap.selectAll(".follow-button"),
-			scale = 0.65,
+			scale = 0.875,
 			timeUp = 150,
 			timeDown = 250,
 			transformUp = "t0,0s" + (scale + 0.1),
