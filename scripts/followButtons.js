@@ -6,12 +6,12 @@ function addFollowButtons() {
 	draw.filter(Snap.filter.shadow(0, 0, -1, 3));
 	draw.filter(Snap.filter.shadow(0, 0, -1, 0));
 	// Filenames
-	var followButtons = Snap.load("images/SVG/FollowButtons.svg", function(fragment) {
+	var followButtons = Snap.load("images/SVG/FollowButtonsSmall.svg", function(fragment) {
 		//draw.append(fragment);	
 		draw.append(fragment);
 
-		var buttons = Snap.selectAll(".follow-button"),
-			scale = 0.875,
+		var buttons = Snap.selectAll("#follow-buttons-svg > .svg-button"),
+			scale = 1,
 			timeUp = 150,
 			timeDown = 250,
 			transformUp = "t0,0s" + (scale + 0.1),
@@ -46,8 +46,9 @@ function animateShadow(value, filter) {
 	/*On hover values: 	from--1, to-20, setter-(filter, node1, stdDeviation)
 						from-0, to-100, setter-(filter, node2, dy)
 						from-3, to-0.5, setter-(filter, node5, node1, slope)*/
-	filter.node.children[0].attributes[0].value = remap(value, 0, 50, -1, 5);
-	filter.node.children[1].attributes[1].value = value / 2;
+	filter.node.children[0].attributes[0].value = remap(value, 0, 100, -1, 2);
+	//filter.node.children[1].attributes[1].value = value / 5;
+	filter.node.children[1].attributes[1].value = remap(value, 0, 100, 0, 10);
 	filter.node.children[4].children[0].attributes[0].value = remap(value, 0, 100, 1, 0.5);
 }
 

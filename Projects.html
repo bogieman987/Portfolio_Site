@@ -2,7 +2,11 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Test</title>
+		<title>Ryan Sweeney Portfolio</title>
+		<meta name="description" content="Programmer Portfolio">
+		<meta name="keywords" content="HTML,CSS,JavaScript,Java,Android">
+		<meta name="author" content="Ryan Sweeney">
+
 		<style type="text/css">					
 			body {
 				margin: 0 0;
@@ -17,7 +21,7 @@
 			h1, h2, h3, h4 {
 				font-family: 'Work Sans', sans-serif;
 			}
-			p, ul, li {
+			p, ul, li, figcaption {
 				font-family: 'Abel', sans-serif;
 			}
 			h1 {
@@ -39,6 +43,11 @@
 			td, tr {
 				height: 100%;
 			}
+			hr {
+				width: 80%;
+				margin: 0 auto;
+				color: white;
+			}
 			.main-container {
 				display: inline;
 				position: absolute;
@@ -49,7 +58,7 @@
 			}
 			/* General content */
 			.content-container {
-				max-width: 65%;
+				width: 1000px;
 				height: 100%;
 				max-height: 75%;
 				overflow: hidden;
@@ -65,26 +74,22 @@
 				margin: 0;
 				padding: 0;
 			}
-			.content-subheader-projects {
-				width: 550px;
-				height: 64px;
-				margin: 0 auto;
-			}
 			.vert-rule {
 				width: 0;
-				height: 100%;
+				height: 99%;
 				margin: auto 1%;
 				border: 1px solid white;
 				float: left;
 			}
-			.multicol-about {
-				width: 70%;
+			.about-multicol {
+				width: 75%;
+				height: 55%;
 				margin: 0 auto;
 			}
-			.multicol-projects {
-				width: 80%;
+			.about-multicol-col {
+				width: 48%;
 				height: 100%;
-				float: right;
+				float: left;
 			}
 			.info-box {
 				font-family: 'Abel', sans-serif;
@@ -99,37 +104,6 @@
 			.info-box ul {
 				list-style-type: none;
 			}
-			.projects {
-				height: 85%;
-			}
-			.projects-container {
-				width: 80.75%;
-				height: 100%;
-				float: right;
-			}
-			.project-selector {
-				width: 97.5%;
-				height: 100%;
-				float: right;
-			}
-			.projects-info-box {
-				width: 600px;
-				font-family: 'Abel', sans-serif;
-				text-align: left;
-			}
-			.projects-info-box h3 {
-				font-family: 'Nunito', sans-serif;
-				padding-left: 5px;
-				margin: 5px 0;
-				font-size: 1em;
-			}
-			.projects-info-box-desc h3 {
-				
-			}
-			.projects-info-box-features p {
-				margin: 0;
-				padding: 0;
-			}
 			.image-small {
 				width: 128px;
 				margin-right: 20px;
@@ -139,7 +113,13 @@
 			}
 			.image-icon {
 				width: 64px;
+				width: 64px;
 				float: left;
+				cursor: pointer;
+				transition: width 0.25s;
+			}
+			.image-icon:hover {
+				width: 70px;
 			}
 			.portfolio-link {
 				outline: none;
@@ -157,10 +137,117 @@
 			.portfolio-link:active {
 				color: #C7A400;
 			}
+			/* Projects page*/
+			.content-subheader-projects {
+				width: 550px;
+				height: 64px;
+				margin: 0 auto;
+			}
+			.project-name {
+				pointer-events: none;
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			.projects-selector {
+				width: 100%;
+				max-height: 85%;
+				overflow-y: auto;
+			}
+			.project-preview {
+				width: 250px;
+				height: 400px;
+				border: 2px solid white;
+				float: left;
+				margin: 16px 10px;
+				box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+				cursor: pointer;
+				transition: color 0.25s, background-color 0.25s, width 0.25s, height 0.25s, box-shadow 0.25s;
+			}
+			.project-preview:hover {
+				width: 280px;
+				height: 415px;
+				color: #1c54c7;
+				background-color: white;
+				box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
+			}
+			.project-preview:active {
+
+			}
+			.project-preview figure {
+				margin: 0;
+			}
+			.project-preview-header {
+				margin: 10px 0;
+			}
+			.project-preview-image-container {
+				width: 230px;
+				height: 280px;
+				margin: 0 auto;
+			}
+			.project-preview-image {
+				max-width: 100%;
+				max-height: 100%;
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			.project-preview-description {
+				width: 230px;
+				height: 60px;
+				margin: 10px auto;
+			}
+			.projects-multicol {
+				height: 80%;
+			}
+			.projects-multicol-col {
+				width: 48%;
+				height: 100%;
+				float: left;
+			}
+			.projects-info-box {
+				height: 100%;
+				font-family: 'Abel', sans-serif;
+				text-align: left;
+			}
+			.projects-info-box h3 {
+				font-family: 'Nunito', sans-serif;
+				padding-left: 5px;
+				margin: 5px 0;
+				font-size: 1em;
+			}
+			.projects-info-box-desc p {
+				padding-left: 0;
+			}
+			.projects-info-box-features h3 {
+				margin: 10px 0;
+			}
+			.projects-info-box-features p {
+				margin: 0;
+				padding: 0;
+			}
+			.feature-complete {
+				color: lime;
+			}
+			.feature-incomplete {
+				color: orange;
+			}
+			.feature-planned {
+				color: grey;
+			}
+			#back-arrow {
+				width: 64px;
+				height: 64px;
+				float: left;
+			}
+			#back-arrow-button:hover circle{
+				fill: black;
+			}
+			#back-arrow-button path {
+				pointer-events: none;
+			}
 			/* Portfolio content navigation */
 			.nav-follow-buttons-container {
-				height: 160px;
-				overflow-y: hidden;
 			}
 			.content-nav-container {
 				height: 45px;
@@ -183,6 +270,7 @@
 				font-size: 1.5em;
 				text-transform: uppercase;
 				box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+				cursor: pointer;
 				transition: box-shadow 0.25s, width 0.25s, height 0.25s;
 			}
 			.content-nav-button:hover, .projects-nav-button:hover {
@@ -212,37 +300,15 @@
 			.content-nav-button-center {
 				border-radius: 0;
 			}
-			.content-nav-button-current {
+			.nav-button-current {
 				border-color: white;
 			}
-			/* Project navigation */
-			.project-directory {
-				float: right;
-				position: relative;
-				top: 50%;
-				transform:  translateY(-50%);
-			}
-			.project-directory a {
-				border: none;
-				color: white;
-				background-color: transparent;
-				text-decoration: underline;
-			}
-			.project-nav-container {
-				border: 1px solid white;
-				min-width: 180px;
-				width: 19%;
-				float: left;
-			}
-			.project-nav-button-container {
-				border: 1px solid grey;
-				width: 160px;
-				margin: 0 auto;
-			}
 			/* Social buttons */
+			.svg-button {
+				cursor: pointer;
+			}
 			#follow-buttons {
-				width: 100%;
-				height: 100px;
+				height: 120px;
 				margin: 5px 0 10px 0;
 			}
 			.link path {
@@ -269,6 +335,7 @@
 			#hidden-content {
 				display: none;
 			}
+
 			/* Adaptivity */
 			@media only screen and (max-width: 840px) {
 
@@ -290,12 +357,13 @@
 						<h2>Ryan Sweeney</h2>
 						<p>("Airth" is my unofficial surname)</p>
 					</header>
-					<article class="multicol-about">
-						<section class="info-box">
+					<article class="about-multicol">
+						<section class="info-box about-multicol-col">
 							<img id="photo" class="image-small" src="images/Logos/BlogIcon.png" alt="Photograph">
 							<p>I'm a 21 year old aspiring programmer from Co.Donegal, Republic of Ireland.<br><br>My life goal is to own a game development studio however I want to work in other parts of the industry before that.<br>For example: web development or even a little indie title or two along the way.</p>
 						</section>
-						<section class="info-box">
+						<div class="vert-rule"></div>
+						<section class="info-box about-multicol-col">
 							<h3>Languages I Actively Use</h3>
 							<ul>
 								<li>Java SE7</li>
@@ -324,31 +392,44 @@
 					</div>
 				</div>
 
-				<svg id="follow-buttons"></svg>
+				<svg id="follow-buttons" viewBox="0 0 400 100"></svg>
 			</nav>
 			
 			<div id="hidden-content">
 				<div id="projects-content" class="portfolio-content">
 					<header class="content-subheader">
 						<div class="content-subheader-projects">		
-							<img class="image-icon" src="">
-							<div class="project-directory">
-								<p><span id="category">Temp</span> > <span id="project-name">Project Name</span></p>
-							</div>
+							<svg id="back-arrow" viewBox="0 0 64 88"></svg>
+							<!-- <img id="back-arrow" class="image-icon" src="images/BackArrow.png"> -->
+							<h2 class="project-name">Projects</h2>
 						</div>
 					</header>
-					<div class="projects">
-						<nav class="project-nav-container">
-							<div class="project-nav-button-container">
-								<button type="button" id="all-button" class="projects-nav-button content-nav-button-top">All</button>
-								<button type="button" id="java-button" class="projects-nav-button content-nav-button-center">Java</button>
-								<button type="button" id="android-button" class="projects-nav-button content-nav-button-center">Android</button>
-								<button type="button" id="cplusplus-button" class="projects-nav-button content-nav-button-bottom">C++</button>
-							</div>
-						</nav>
-						<div class="projects-container">
-							<div class="vert-rule"></div>
-							<div class="project-selector"></div>
+					<hr>
+					<div class="projects-selector">
+						<!-- Math Sheet Calculator Preview -->
+						<div id="math-sheet-calculator-preview" class="project-preview" data-project-name="Math Sheet Calculator">
+							<header>
+								<h3 class="project-preview-header">Math Sheet Calculator</h3>
+							</header>
+							<figure>
+								<div class="project-preview-image-container">
+									<img class="project-preview-image" src="images/Resources/calc.png" alt="Picture of a simple caclulator">
+								</div>
+								<!-- <img class="project-preview-image" src="" alt="Picture of a simple caclulator"> -->
+								<figcaption class="project-preview-description">A simple Android calculator app created for the purpose of learning how to make an Android application</figcaption>
+							</figure>	
+						</div>
+						<!-- Bulls and Cows -->
+						<div id="bulls-and-cows-preview" class="project-preview" data-project-name="Bulls and Cows">
+							<header>
+								<h3 class="project-preview-header">Bulls and Cows</h3>
+							</header>
+							<figure>
+								<div class="project-preview-image-container">
+									<img class="project-preview-image" src="images/Resources/bullsandcows.png" alt="Picture of a text based game with graphics made from text characters">
+								</div>
+								<figcaption class="project-preview-description">A command line game made in C++, created as part of an online course in learning how to program in C++</figcaption>
+							</figure>
 						</div>
 					</div>
 				</div>
@@ -362,8 +443,8 @@
 				<!-- Add projects here -->
 				<div id="projects">					
 					<!-- Math Sheet Calculator-->
-					<article id="math-sheet-calculator" class="multicol-projects">
-						<section>
+					<article id="math-sheet-calculator" class="projects-multicol" >
+						<section class="projects-info-box projects-multicol-col">
 							<header>
 								<h3><a class="portfolio-link" href="https://github.com/bogieman987/Math_Sheet_Calculator">Math Sheet Calculator - Github</a></h3>
 							</header>
@@ -375,32 +456,63 @@
 									<h3>Main features:</h3>
 									<ul>
 										<li>
-											<p>Basic calculator functions (addition, subtraction, multiplication, division)<br>Status: <strong><em>complete</em></strong></p>
+											<p>Basic calculator functions (addition, subtraction, multiplication, division)<br>Status: <span class="feature-complete"><strong><em>complete</em></strong></span></p>
 										</li>
 										<li>
-											<p>Basic memory functions (store in memory, add value to stored memory value etc.)<br>Status: not started</p>			
+											<p>Basic memory functions (store in memory, add value to stored memory value etc.)<br>Status: <span class="feature-planned">not started</span></p>			
 										</li>
 										<li>
-											<p>Scientific calculator functions (brackets, log, exponents etc.)<br>Status: <em>Started work, initial bracket support completed</em></p>
+											<p>Scientific calculator functions (brackets, log, exponents etc.)<br>Status: <span class="feature-incomplete"><em>Started work, initial bracket support completed</em></span></p>
 										</li>
 										<li>
-											<p>Plotting sum to grid (may add support for graphs)<br>Status: not started</p>		
+											<p>Plotting sum to grid (may add support for graphs)<br>Status: <span class="feature-planned">not started</span></p>		
 										</li>
 										<li>
-											<p>Saving/Loading previous sums with ability to name (potential addition of being able to store online via free cloud storage options)<br>Status: not started</p>
+											<p>Saving/Loading previous sums with ability to name (potential addition of being able to store online via free cloud storage options)<br>Status: <span class="feature-planned">not started</span></p>
+										</li>
+									</ul>
+								</div>
+							</article>
+
+							
+						</section>
+						<div class="vert-rule"></div>
+						<section class="projects-info-box projects-multicol-col">
+							<!-- Example pictures go here-->
+							<img src="images/Resources/calc.png" alt="Picture 1 of a simple caclulator" height="100%">
+						</section>
+					</article>
+
+					<!-- Bulls and Cows -->
+					<article id="bulls-and-cows" class="projects-multicol">
+						<section class="projects-multicol-col projects-multicol-col">
+							<header>
+								<h3><a class="portfolio-link" href="https://github.com/bogieman987/Bulls_and_Cows">Bulls and Cows - Github</a></h3>
+							</header>
+							<article>
+								<div class="projects-info-box-desc">
+									<p>A very simple command line game.<br>This is a result of following Section 2 of an online Udemy course "The Unreal Engine Developer Course - Learn C++ & Make Games".<br>It is made entirely in C++.</p>					
+								</div>
+								<div class="projects-info-box-features">
+									<h3>Main features:</h3>
+									<ul>
+										<li>
+											<p>Select length of word or use default length</p>
+										</li>
+										<li>
+											<p>Restart upon success or failure</p>			
+										</li>
+										<li>
+											<p>Displays whether a letter is in the word and if it is, if it's in the right place or not</p>
 										</li>
 									</ul>
 								</div>
 							</article>
 						</section>
-						<section>
+						<div class="vert-rule"></div>
+						<section class="projects-info-box projects-multicol-col">
 							<!-- Example pictures go here-->
 						</section>
-					</article>
-
-					<!-- Bulls and Cows -->
-					<article id="bulls-and-cows" class="multicol-projects">
-						
 					</article>
 				</div>
 			</div>
@@ -421,17 +533,23 @@
 					"height": window.innerHeight + "px"
 				});
 
+				loadBackArrow();
+
 				addFollowButtons();
 				setUpButtons();
+				setUpProjectButtons();
 				setUpBackgroundImage();
 				setUpColumns();
 			});
 
-			function setUpBackgroundImage() {
-				var backgroundWidth = window.innerWidth;
-				var backgroundHeight = backgroundWidth * 0.75;
-				
+			$(window).resize(function() {
+				resizeBackgroundImage();
+			});
 
+			function setUpBackgroundImage() {
+				var backgroundWidth = window.innerWidth,
+					backgroundHeight = backgroundWidth * 0.75;
+				
 				$("#background-image").ready(function() {
 					$(".main-container").css({
 						"background": "url(images/Background.png)",
@@ -447,17 +565,28 @@
 				});
 			}
 
-			function setUpColumns() {
-				$(".multicol-about, .multicol-projects").css({
-					"column-count": "2",
-					"column-rule": "2px outset white"
+			function resizeBackgroundImage() {
+				var backgroundWidth = window.innerWidth,
+					backgroundHeight = backgroundWidth * 0.75;
+
+				$(".main-container").css({
+					"background-size": backgroundWidth + "px " + backgroundHeight + "px"
 				});
 			}
 
+			function setUpColumns() {
+				/*$(".about-multicol").css({
+					"column-count": "2",
+					"column-rule": "2px outset white"
+				});
+				$(".projects-multicol").css({
+					"column-count": "2",
+					"column-rule": "2px outset white"
+				});*/
+			}
+
 			function getBackgroundDimentions() {
-				var dimen = $(".main-container").css("height") * 1.333 + $(".main-container").css("height");
-				console.log(dimen);
-				return dimen;
+				return $(".main-container").css("height") * 1.333 + $(".main-container").css("height");
 			}
 
 			function setPortfolioContent(contentType) {		
@@ -466,36 +595,26 @@
 				switch(contentType) {
 					case "about":
 						$("#about-content").appendTo($(".content-container"));
-						console.log("About button pressed!");
 						break;
 					case "projects":
 						$("#projects-content").appendTo($(".content-container"));
-						console.log("Projects button pressed!");
 						break;
 					case "contact":
 						$("#contact-content").appendTo($(".content-container"));
-						console.log("Contact button pressed!");
 						break;
 				}
 			}
 
 			function setUpButtons() {
-				$("#about-button").addClass("content-nav-button-current");
+				$("#about-button").addClass("nav-button-current");
 
 				var buttons = $(".content-nav-button");
 
 				buttons.on("click", function(event) {
 					var button = $(this);
 
-					if(setButtonState(button)) {
+					if(setButtonState(button, ".content-nav-button")) {
 						setPortfolioContent(button.attr("id").split("-")[0]);
-					}
-
-					if(!(button.hasClass("content-nav-button-current"))) {
-						$(".content-nav-button-current").removeClass("content-nav-button-current");
-						button.addClass("content-nav-button-current");
-
-						
 					}
 				});
 
@@ -503,16 +622,16 @@
 				buttons.on("click", function(event) {
 					var button = $(this);
 					
-					if(setButtonState(button)) {
+					if(setButtonState(button, ".projects-nav-button")) {
 
 					}
 				});
 			}
 
-			function setButtonState(button) {
-				if(!(button.hasClass("content-nav-button-current"))) {
-					$(".content-nav-button-current").removeClass("content-nav-button-current");
-					button.addClass("content-nav-button-current");	
+			function setButtonState(button, type) {
+				if(!(button.hasClass("nav-button-current"))) {
+					$(type).removeClass("nav-button-current");
+					button.addClass("nav-button-current");	
 
 					return true;					
 				}
@@ -520,8 +639,84 @@
 				return false;
 			}
 
+			function setUpProjectButtons() {
+				// Reformat
+				var projectPreviews = $(".project-preview");
+				$(projectPreviews.get(0)).addClass("content-nav-button-left");
+				$(projectPreviews.get(projectPreviews.length - 1)).addClass("content-nav-button-right");
+
+				var previews = $(".project-preview");
+
+				previews.on("click", function(event) {
+					var project= $(this);
+
+					$(".projects-selector").appendTo("#hidden-content");
+
+					var projectId = project.attr("id");
+					var projectName = projectId.substring(0, projectId.indexOf("-preview"));
+
+					$("#" + projectName).appendTo($("#projects-content"));
+
+					$(".project-name").html(project.data("projectName"));
+
+					$("#back-arrow").css("display", "block");
+				});
+
+				var backArrow = $("#back-arrow");
+				backArrow.on("click", function(event) {
+					$(this).css("display", "none");
+
+					console.log($(".portfolio-content > .projects-multicol"));
+					$(".portfolio-content > .projects-multicol").appendTo($("#projects"));
+
+					console.log($(".projects-selector"));
+					$(".projects-selector").appendTo($("#projects-content"));
+
+					$(".project-name").html("Projects");
+				});
+				backArrow.css("display", "none");
+			}
+
 			function animatePortfolioContentChange() {
 
+			}
+
+			function viewProject(projectID) {
+				//#math-sheet-calculator
+			}
+
+			function loadBackArrow() {
+				var svgId = "#back-arrow";
+				var draw = Snap(svgId);
+				Snap.load("images/SVG/BackArrowSmall.svg", function(fragment) {
+					draw.append(fragment);
+
+					var button = Snap.selectAll("#back-arrow-svg > .svg-button"),
+						scale = 1,
+						timeUp = 150,
+						timeDown = 250,
+						transformUp = "t0,0s" + (scale + 0.1),
+						transformDown = "t0,0s" + scale;	
+
+					button[0].hover(function(event) {
+						var shadow = Snap($("#follow-buttons")[0]).selectAll("filter")[0];
+						
+						this.animate({transform: transformUp}, timeUp);
+						this.attr({filter: shadow});
+
+						Snap.animate(0, 100, function(value) {animateShadow(value, shadow)}, timeUp);
+					}, function(event) {
+						var shadow = Snap($("#follow-buttons")[0]).selectAll("filter")[0],
+						noShadow = Snap($("#follow-buttons")[0]).selectAll("filter")[1];
+
+						this.animate({transform: transformDown}, timeDown, mina.bounce);
+
+						var element = this;
+						Snap.animate(100, 0, function(value) {animateShadow(value, shadow)}, timeDown, mina.bounce, function() {
+							element.attr({filter: noShadow});
+						});
+					});
+				});
 			}
 		</script>
 	</body>
