@@ -55,3 +55,15 @@ function animateShadow(value, filter) {
 function remap(value, from1, to1, from2, to2) {
 	return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
 }
+
+var ShadowFilter = {
+	getDefaultShadowFilter: function() {
+		return Snap.filter.shadow(0, 0, -1, 3);
+	}
+};
+
+var NoShadowFilter = {
+	getFlatShadowFilter: function() {
+		return Snap.filter.shadow(0, 0, -1, 0);
+	}
+}

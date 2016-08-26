@@ -13,7 +13,7 @@
 				text-align: center;
 				color: white;
 				background-color: #1c54c7;
-				overflow: hidden;
+				overflow-x: hidden;
 			}
 			article {
 				text-align: left;
@@ -49,23 +49,21 @@
 				color: white;
 			}
 			.main-container {
-				display: inline;
-				position: absolute;
-				top: 0;
-				left: 0;
 				width: 100%;
-				height: 100%;
+				/*height: 100%;*/
+				min-height: 765px;
 			}
 			/* General content */
 			.content-container {
 				width: 1000px;
-				height: 100%;
-				max-height: 75%;
+				height: 560px;
+				min-height: 566px;
 				overflow: hidden;
 				margin: 10px auto;
 			}
 			.portfolio-content {
 				height: 100%;
+				min-height: 560px;
 			}
 			.content-subheader {
 				margin-bottom: 30px;
@@ -84,6 +82,7 @@
 			.about-multicol {
 				width: 75%;
 				height: 55%;
+				min-height: 310px;
 				margin: 0 auto;
 			}
 			.about-multicol-col {
@@ -235,19 +234,63 @@
 			.feature-planned {
 				color: grey;
 			}
+
+			.gallery-container {
+				width: 100%;
+				height: 100%;
+				overflow-y: hidden;
+			}
+			.gallery-previews-container {
+				width: 98%;
+				height: 27.5%;
+				margin: 5px auto;
+				overflow-y: hidden;
+			}
+			.gallery-preview-image {
+				width: 22.1%;
+				height: 95%;
+				float: left;
+				margin: 0 5px;
+				border: 2px solid transparent;
+				overflow: hidden;
+				cursor: pointer;
+			}
+			.gallery-preview-image img {
+				width: 100%;
+			}
+			.gallery-preview-current {
+				border-color: white;
+			}
+			.gallery-current-image-container {
+				width: 100%;
+				height: 66%;
+				margin: 5px auto;
+				cursor: pointer;
+			}
+			.gallery-current-image {
+				height: 100%;
+				position: relative;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
 			#back-arrow {
 				width: 64px;
 				height: 64px;
 				float: left;
 			}
-			#back-arrow-button:hover circle{
-				fill: black;
-			}
-			#back-arrow-button path {
+			#arrow-button path {
 				pointer-events: none;
+			}
+			#arrow-button:focus circle {
+				stroke: black;
+			}
+			#arrow-button:hover circle, #arrow-button:focus circle {
+				fill: black;
 			}
 			/* Portfolio content navigation */
 			.nav-follow-buttons-container {
+				min-height: 180px;
 			}
 			.content-nav-container {
 				height: 45px;
@@ -335,16 +378,13 @@
 			#hidden-content {
 				display: none;
 			}
-
+			
 			/* Adaptivity */
 			@media only screen and (max-width: 840px) {
 
 			}
 		</style>
 
-		<link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet"> 
-		<link href="https://fonts.googleapis.com/css?family=Candal" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> 
@@ -379,10 +419,9 @@
 							</ul>
 						</section>
 					</article>
-					<h3><a class="portfolio-link" href="/">Click to download CV</a></h3>
+					<h3><a class="portfolio-link" href="http://www.mediafire.com/download/6jlczxu2i5ltl3u/RyanCV.doc">Click to download CV</a></h3>
 				</div>	
 			</main>	
-
 			<nav class="nav-follow-buttons-container">
 				<div class="content-nav-container">
 					<div class="content-nav-button-container">
@@ -394,330 +433,173 @@
 
 				<svg id="follow-buttons" viewBox="0 0 400 100"></svg>
 			</nav>
-			
-			<div id="hidden-content">
-				<div id="projects-content" class="portfolio-content">
-					<header class="content-subheader">
-						<div class="content-subheader-projects">		
-							<svg id="back-arrow" viewBox="0 0 64 88"></svg>
-							<!-- <img id="back-arrow" class="image-icon" src="images/BackArrow.png"> -->
-							<h2 class="project-name">Projects</h2>
-						</div>
-					</header>
-					<hr>
-					<div class="projects-selector">
-						<!-- Math Sheet Calculator Preview -->
-						<div id="math-sheet-calculator-preview" class="project-preview" data-project-name="Math Sheet Calculator">
-							<header>
-								<h3 class="project-preview-header">Math Sheet Calculator</h3>
-							</header>
-							<figure>
-								<div class="project-preview-image-container">
-									<img class="project-preview-image" src="images/Resources/calc.png" alt="Picture of a simple caclulator">
-								</div>
-								<!-- <img class="project-preview-image" src="" alt="Picture of a simple caclulator"> -->
-								<figcaption class="project-preview-description">A simple Android calculator app created for the purpose of learning how to make an Android application</figcaption>
-							</figure>	
-						</div>
-						<!-- Bulls and Cows -->
-						<div id="bulls-and-cows-preview" class="project-preview" data-project-name="Bulls and Cows">
-							<header>
-								<h3 class="project-preview-header">Bulls and Cows</h3>
-							</header>
-							<figure>
-								<div class="project-preview-image-container">
-									<img class="project-preview-image" src="images/Resources/bullsandcows.png" alt="Picture of a text based game with graphics made from text characters">
-								</div>
-								<figcaption class="project-preview-description">A command line game made in C++, created as part of an online course in learning how to program in C++</figcaption>
-							</figure>
-						</div>
+		</div>
+
+		<div id="hidden-content">
+			<div id="projects-content" class="portfolio-content">
+				<header class="content-subheader">
+					<div class="content-subheader-projects">		
+						<svg id="back-arrow" viewBox="0 0 64 64"></svg>
+						<!-- <img id="back-arrow" class="image-icon" src="images/BackArrow.png"> -->
+						<h2 class="project-name">Projects</h2>
+					</div>
+				</header>
+				<hr>
+				<div class="projects-selector">
+					<!-- Math Sheet Calculator Preview -->
+					<div id="math-sheet-calculator-preview" class="project-preview" data-project-name="Math Sheet Calculator">
+						<header>
+							<h3 class="project-preview-header">Math Sheet Calculator</h3>
+						</header>
+						<figure>
+							<div class="project-preview-image-container">
+								<img class="project-preview-image" src="images/Resources/calc.png" alt="Picture of a simple caclulator">
+							</div>
+							<!-- <img class="project-preview-image" src="" alt="Picture of a simple caclulator"> -->
+							<figcaption class="project-preview-description">A simple Android calculator app created for the purpose of learning how to make an Android application</figcaption>
+						</figure>	
+					</div>
+					<!-- Bulls and Cows -->
+					<div id="bulls-and-cows-preview" class="project-preview" data-project-name="Bulls and Cows">
+						<header>
+							<h3 class="project-preview-header">Bulls and Cows</h3>
+						</header>
+						<figure>
+							<div class="project-preview-image-container">
+								<img class="project-preview-image" src="images/Resources/bullsandcows.png" alt="Picture of a text based game with graphics made from text characters">
+							</div>
+							<figcaption class="project-preview-description">A command line game made in C++, created as part of an online course in learning how to program in C++</figcaption>
+						</figure>
 					</div>
 				</div>
-				<div id="contact-content" class="portfolio-content">
-					<h1>Content from Weebly Site Goes here</h1>
-					<!--{content}-->
-				</div>
+			</div>
+			<div id="contact-content" class="portfolio-content">
+				<h1>Content from Weebly Site Goes here</h1>
+				<!--{content}-->
+				{content}
+			</div>
 
-				<img id="background-image" src="images/Background.png">
+			<img id="background-image" src="images/Background.png">
 
-				<!-- Add projects here -->
-				<div id="projects">					
-					<!-- Math Sheet Calculator-->
-					<article id="math-sheet-calculator" class="projects-multicol" >
-						<section class="projects-info-box projects-multicol-col">
-							<header>
-								<h3><a class="portfolio-link" href="https://github.com/bogieman987/Math_Sheet_Calculator">Math Sheet Calculator - Github</a></h3>
-							</header>
-							<article>
-								<div class="projects-info-box-desc">
-									<p>A typical Android calculator app, the goal of creating this was to learn how to utilize the Android SDK in making an app, as well as learning various other aspects to app design such as creating a good UI with a good UX and a set of decent features</p>					
+			<!-- Add projects here -->
+			<div id="projects">					
+				<!-- Math Sheet Calculator-->
+				<article id="math-sheet-calculator" class="projects-multicol" >
+					<section class="projects-info-box projects-multicol-col">
+						<header>
+							<h3><a class="portfolio-link" href="https://github.com/bogieman987/Math_Sheet_Calculator">Math Sheet Calculator - Github</a></h3>
+						</header>
+						<article>
+							<div class="projects-info-box-desc">
+								<p>A typical Android calculator app, the goal of creating this was to learn how to utilize the Android SDK in making an app, as well as learning various other aspects to app design such as creating a good UI with a good UX and a set of decent features</p>					
+							</div>
+							<div class="projects-info-box-features">
+								<h3>Main features:</h3>
+								<ul>
+									<li>
+										<p>Basic calculator functions (addition, subtraction, multiplication, division)<br>Status: <span class="feature-complete"><strong><em>complete</em></strong></span></p>
+									</li>
+									<li>
+										<p>Basic memory functions (store in memory, add value to stored memory value etc.)<br>Status: <span class="feature-planned">not started</span></p>			
+									</li>
+									<li>
+										<p>Scientific calculator functions (brackets, log, exponents etc.)<br>Status: <span class="feature-incomplete"><em>Started work, initial bracket support completed</em></span></p>
+									</li>
+									<li>
+										<p>Plotting sum to grid (may add support for graphs)<br>Status: <span class="feature-planned">not started</span></p>		
+									</li>
+									<li>
+										<p>Saving/Loading previous sums with ability to name (potential addition of being able to store online via free cloud storage options)<br>Status: <span class="feature-planned">not started</span></p>
+									</li>
+								</ul>
+							</div>
+						</article>
+					</section>
+					<div class="vert-rule"></div>
+					<section class="projects-info-box projects-multicol-col">
+						<!-- Example pictures go here-->
+						<div class="gallery-container">
+							<!-- Scroll left arrow -->
+							<div class="gallery-current-image-container">
+								<img class="gallery-current-image calc" src="images/Resources/calc.png" alt="Picture 1 of a simple caclulator">
+							</div>	
+							<!-- Scroll right arrow -->
+							<div class="gallery-previews-container">
+								<div class="gallery-preview-image calc gallery-preview-current">
+									<img class="calc" src="images/Resources/calc.png" alt="Picture 1 of a simple caclulator">
 								</div>
-								<div class="projects-info-box-features">
-									<h3>Main features:</h3>
-									<ul>
-										<li>
-											<p>Basic calculator functions (addition, subtraction, multiplication, division)<br>Status: <span class="feature-complete"><strong><em>complete</em></strong></span></p>
-										</li>
-										<li>
-											<p>Basic memory functions (store in memory, add value to stored memory value etc.)<br>Status: <span class="feature-planned">not started</span></p>			
-										</li>
-										<li>
-											<p>Scientific calculator functions (brackets, log, exponents etc.)<br>Status: <span class="feature-incomplete"><em>Started work, initial bracket support completed</em></span></p>
-										</li>
-										<li>
-											<p>Plotting sum to grid (may add support for graphs)<br>Status: <span class="feature-planned">not started</span></p>		
-										</li>
-										<li>
-											<p>Saving/Loading previous sums with ability to name (potential addition of being able to store online via free cloud storage options)<br>Status: <span class="feature-planned">not started</span></p>
-										</li>
-									</ul>
+								<div class="gallery-preview-image calc">
+									<img class="calc" src="images/Resources/calc2.png" alt="Picture 2 of a simple caclulator">
 								</div>
-							</article>
+								<div class="gallery-preview-image calc">
+									<img class="calc" src="images/Resources/calc3.png" alt="Picture 3 of a simple caclulator">
+								</div>
+								<div class="gallery-preview-image calc">
+									<img class="calc" src="images/Resources/calc4.png" alt="Picture 4 of a simple caclulator">
+								</div>
+							</div>
+						</div>
+					</section>
+				</article>
 
-							
-						</section>
-						<div class="vert-rule"></div>
-						<section class="projects-info-box projects-multicol-col">
-							<!-- Example pictures go here-->
-							<img src="images/Resources/calc.png" alt="Picture 1 of a simple caclulator" height="100%">
-						</section>
-					</article>
-
-					<!-- Bulls and Cows -->
-					<article id="bulls-and-cows" class="projects-multicol">
-						<section class="projects-multicol-col projects-multicol-col">
-							<header>
-								<h3><a class="portfolio-link" href="https://github.com/bogieman987/Bulls_and_Cows">Bulls and Cows - Github</a></h3>
-							</header>
-							<article>
-								<div class="projects-info-box-desc">
-									<p>A very simple command line game.<br>This is a result of following Section 2 of an online Udemy course "The Unreal Engine Developer Course - Learn C++ & Make Games".<br>It is made entirely in C++.</p>					
+				<!-- Bulls and Cows -->
+				<article id="bulls-and-cows" class="projects-multicol">
+					<section class="projects-multicol-col projects-multicol-col">
+						<header>
+							<h3><a class="portfolio-link" href="https://github.com/bogieman987/Bulls_and_Cows">Bulls and Cows - Github</a></h3>
+						</header>
+						<article>
+							<div class="projects-info-box-desc">
+								<p>A very simple command line game.<br>This is a result of following Section 2 of an online Udemy course "The Unreal Engine Developer Course - Learn C++ & Make Games".<br>It is made entirely in C++.</p>					
+							</div>
+							<div class="projects-info-box-features">
+								<h3>Main features:</h3>
+								<ul>
+									<li>
+										<p>Select length of word or use default length</p>
+									</li>
+									<li>
+										<p>Restart upon success or failure</p>			
+									</li>
+									<li>
+										<p>Displays whether a letter is in the word and if it is, if it's in the right place or not</p>
+									</li>
+								</ul>
+							</div>
+						</article>
+					</section>
+					<div class="vert-rule"></div>
+					<section class="projects-info-box projects-multicol-col">
+						<!-- Example pictures go here-->
+						<div class="gallery-container">
+							<!-- Scroll left arrow -->
+							<div class="gallery-current-image-container">
+								<img class="gallery-current-image bulls" src="" alt="Picture 1 of a Bulls and Cows game">
+							</div>	
+							<!-- Scroll right arrow -->
+							<div class="gallery-previews-container">
+								<div class="gallery-preview-image bulls gallery-preview-current">
+									<img class="bulls" src="" alt="Picture 1 of a Bulls and Cows game">
 								</div>
-								<div class="projects-info-box-features">
-									<h3>Main features:</h3>
-									<ul>
-										<li>
-											<p>Select length of word or use default length</p>
-										</li>
-										<li>
-											<p>Restart upon success or failure</p>			
-										</li>
-										<li>
-											<p>Displays whether a letter is in the word and if it is, if it's in the right place or not</p>
-										</li>
-									</ul>
+								<div class="gallery-preview-image bulls">
+									<img class="bulls" src="" alt="Picture 2 of a Bulls and Cows game">
 								</div>
-							</article>
-						</section>
-						<div class="vert-rule"></div>
-						<section class="projects-info-box projects-multicol-col">
-							<!-- Example pictures go here-->
-						</section>
-					</article>
-				</div>
+								<div class="gallery-preview-image bulls">
+									<img class="bulls" src="" alt="Picture 3 of a Bulls and Cows game">
+								</div>
+								<div class="gallery-preview-image bulls">
+									<img class="bulls" src="" alt="Picture 4 of a Bulls and Cows game">
+								</div>
+							</div>
+						</div>
+					</section>
+				</article>
 			</div>
 		</div>
 		
 		<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/plugins/ScrollToPlugin.min.js"></script>
-		<script src="scripts/snap.svg.js"></script>
-		<script src="scripts/followButtons.js"></script>
-		<script src="scripts/portfolioTabChanger.js"></script>
-		<script type="text/javascript">
-			// TODO - fix github logo
-			// TODO - give each navigation button separate little container so they don't move the other buttons
-			$(window).ready(function() {
-				$("body").css({
-					"width": window.innerWidth + "px",
-					"height": window.innerHeight + "px"
-				});
-
-				loadBackArrow();
-
-				addFollowButtons();
-				setUpButtons();
-				setUpProjectButtons();
-				setUpBackgroundImage();
-				setUpColumns();
-			});
-
-			$(window).resize(function() {
-				resizeBackgroundImage();
-			});
-
-			function setUpBackgroundImage() {
-				var backgroundWidth = window.innerWidth,
-					backgroundHeight = backgroundWidth * 0.75;
-				
-				$("#background-image").ready(function() {
-					$(".main-container").css({
-						"background": "url(images/Background.png)",
-						"background-repeat": "no-repeat",	
-						"background-size": backgroundWidth + "px " + backgroundHeight + "px",
-						"background-position": "center top",
-						"z-index": "1"
-					});
-					$("body").css({
-						"background-color": "#092F7F"
-					});
-					$("#background-image").remove();
-				});
-			}
-
-			function resizeBackgroundImage() {
-				var backgroundWidth = window.innerWidth,
-					backgroundHeight = backgroundWidth * 0.75;
-
-				$(".main-container").css({
-					"background-size": backgroundWidth + "px " + backgroundHeight + "px"
-				});
-			}
-
-			function setUpColumns() {
-				/*$(".about-multicol").css({
-					"column-count": "2",
-					"column-rule": "2px outset white"
-				});
-				$(".projects-multicol").css({
-					"column-count": "2",
-					"column-rule": "2px outset white"
-				});*/
-			}
-
-			function getBackgroundDimentions() {
-				return $(".main-container").css("height") * 1.333 + $(".main-container").css("height");
-			}
-
-			function setPortfolioContent(contentType) {		
-				$(".content-container .portfolio-content").appendTo($("#hidden-content"));
-
-				switch(contentType) {
-					case "about":
-						$("#about-content").appendTo($(".content-container"));
-						break;
-					case "projects":
-						$("#projects-content").appendTo($(".content-container"));
-						break;
-					case "contact":
-						$("#contact-content").appendTo($(".content-container"));
-						break;
-				}
-			}
-
-			function setUpButtons() {
-				$("#about-button").addClass("nav-button-current");
-
-				var buttons = $(".content-nav-button");
-
-				buttons.on("click", function(event) {
-					var button = $(this);
-
-					if(setButtonState(button, ".content-nav-button")) {
-						setPortfolioContent(button.attr("id").split("-")[0]);
-					}
-				});
-
-				buttons = $(".projects-nav-button");
-				buttons.on("click", function(event) {
-					var button = $(this);
-					
-					if(setButtonState(button, ".projects-nav-button")) {
-
-					}
-				});
-			}
-
-			function setButtonState(button, type) {
-				if(!(button.hasClass("nav-button-current"))) {
-					$(type).removeClass("nav-button-current");
-					button.addClass("nav-button-current");	
-
-					return true;					
-				}
-
-				return false;
-			}
-
-			function setUpProjectButtons() {
-				// Reformat
-				var projectPreviews = $(".project-preview");
-				$(projectPreviews.get(0)).addClass("content-nav-button-left");
-				$(projectPreviews.get(projectPreviews.length - 1)).addClass("content-nav-button-right");
-
-				var previews = $(".project-preview");
-
-				previews.on("click", function(event) {
-					var project= $(this);
-
-					$(".projects-selector").appendTo("#hidden-content");
-
-					var projectId = project.attr("id");
-					var projectName = projectId.substring(0, projectId.indexOf("-preview"));
-
-					$("#" + projectName).appendTo($("#projects-content"));
-
-					$(".project-name").html(project.data("projectName"));
-
-					$("#back-arrow").css("display", "block");
-				});
-
-				var backArrow = $("#back-arrow");
-				backArrow.on("click", function(event) {
-					$(this).css("display", "none");
-
-					console.log($(".portfolio-content > .projects-multicol"));
-					$(".portfolio-content > .projects-multicol").appendTo($("#projects"));
-
-					console.log($(".projects-selector"));
-					$(".projects-selector").appendTo($("#projects-content"));
-
-					$(".project-name").html("Projects");
-				});
-				backArrow.css("display", "none");
-			}
-
-			function animatePortfolioContentChange() {
-
-			}
-
-			function viewProject(projectID) {
-				//#math-sheet-calculator
-			}
-
-			function loadBackArrow() {
-				var svgId = "#back-arrow";
-				var draw = Snap(svgId);
-				Snap.load("images/SVG/BackArrowSmall.svg", function(fragment) {
-					draw.append(fragment);
-
-					var button = Snap.selectAll("#back-arrow-svg > .svg-button"),
-						scale = 1,
-						timeUp = 150,
-						timeDown = 250,
-						transformUp = "t0,0s" + (scale + 0.1),
-						transformDown = "t0,0s" + scale;	
-
-					button[0].hover(function(event) {
-						var shadow = Snap($("#follow-buttons")[0]).selectAll("filter")[0];
-						
-						this.animate({transform: transformUp}, timeUp);
-						this.attr({filter: shadow});
-
-						Snap.animate(0, 100, function(value) {animateShadow(value, shadow)}, timeUp);
-					}, function(event) {
-						var shadow = Snap($("#follow-buttons")[0]).selectAll("filter")[0],
-						noShadow = Snap($("#follow-buttons")[0]).selectAll("filter")[1];
-
-						this.animate({transform: transformDown}, timeDown, mina.bounce);
-
-						var element = this;
-						Snap.animate(100, 0, function(value) {animateShadow(value, shadow)}, timeDown, mina.bounce, function() {
-							element.attr({filter: noShadow});
-						});
-					});
-				});
-			}
-		</script>
+		<script id="snap-js" src="scripts/snap.svg.js"></script>
+		<script src="scripts/singlePageScript.js"></script>
 	</body>
 </html>
