@@ -52,21 +52,22 @@
 				width: 100%;
 				/*height: 100%;*/
 				min-height: 765px;
+				margin: 10px 0 0 0;
 			}
 			/* General content */
 			.content-container {
 				width: 1000px;
 				height: 560px;
-				min-height: 566px;
 				overflow: hidden;
-				margin: 10px auto;
+				margin: 0 auto 10px auto;
 			}
 			.portfolio-content {
 				height: 100%;
-				min-height: 560px;
+				min-height: 550px;
+				overflow-y: hidden;
 			}
 			.content-subheader {
-				margin-bottom: 30px;
+				margin-bottom: 20px;
 			}
 			.content-subheader h2, .content-subheader p {
 				margin: 0;
@@ -234,7 +235,6 @@
 			.feature-planned {
 				color: grey;
 			}
-
 			.gallery-container {
 				width: 100%;
 				height: 100%;
@@ -252,11 +252,15 @@
 				float: left;
 				margin: 0 5px;
 				border: 2px solid transparent;
+				background-color: rgba(0, 0, 0, 0.25);
 				overflow: hidden;
 				cursor: pointer;
 			}
 			.gallery-preview-image img {
 				width: 100%;
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
 			}
 			.gallery-preview-current {
 				border-color: white;
@@ -268,16 +272,13 @@
 				cursor: pointer;
 			}
 			.gallery-current-image {
-				height: 100%;
+				max-width: 100%;
+				height: 100%;	
 				position: relative;
 				left: 50%;
 				transform: translateX(-50%);
 			}
-
 			#back-arrow {
-				width: 64px;
-				height: 64px;
-				float: left;
 			}
 			#arrow-button path {
 				pointer-events: none;
@@ -287,6 +288,33 @@
 			}
 			#arrow-button:hover circle, #arrow-button:focus circle {
 				fill: black;
+			}
+			.project-back-arrow-container {
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+				float: left;
+			}
+			.project-back-arrow-inner-container {
+				width: 50px;
+				height: 50px;
+			}
+			.project-back-arrow {
+				width: 40px;
+				height: 40px;
+				cursor: pointer;
+				position: relative;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			.project-back-arrow:hover {
+				width: 50px;
+				height: 50px;
+				filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=8, Color='#444')";
+				filter: url(#drop-shadow);
+				-webkit-filter: drop-shadow(0px 8px 3px rgba(0,0,0,0.5));
+				filter: drop-shadow(0px 8px 3px rgba(0,0,0,0.5));
 			}
 			/* Portfolio content navigation */
 			.nav-follow-buttons-container {
@@ -347,12 +375,49 @@
 				border-color: white;
 			}
 			/* Social buttons */
+			.animated-button {
+				transition: width 250ms ease, height 250ms ease, filter 250ms ease;
+				filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#000')";
+				filter: url(#drop-shadow);
+				-webkit-filter: drop-shadow(0px 0px 0px rgba(0,0,0,0));
+				filter: drop-shadow(0px 0px 0px rgba(0,0,0,0));
+			}
 			.svg-button {
 				cursor: pointer;
 			}
 			#follow-buttons {
 				height: 120px;
+			}
+			.follow-buttons-container {
 				margin: 5px 0 10px 0;
+			}
+			.follow-buttons-inner-container {
+				width: 500px;
+				height: 90px;
+				margin: 0 auto;
+			}
+			.social-button-png {
+				width: 90px;
+				height: 90px;
+				float: left;
+				margin: 0 5px;
+				padding: 0;
+			}
+			.social-button-icon {
+				width: 80px;
+				height: 80px;
+				cursor: pointer;
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			.social-button-icon:hover {
+				width: 90px;
+				height: 90px;
+				filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=8, Color='#444')";
+				filter: url(#drop-shadow);
+				-webkit-filter: drop-shadow(0px 8px 3px rgba(0,0,0,0.5));
+				filter: drop-shadow(0px 8px 3px rgba(0,0,0,0.5));
 			}
 			.link path {
 				pointer-events: none;
@@ -375,8 +440,17 @@
 			#blog-button .link:hover circle, #blog-button .link:focus circle {
 				fill: rgb(255, 102, 0);
 			}
+
 			#hidden-content {
 				display: none;
+			}
+			#filters {
+				width: 0;
+				height: 0;
+				display: inline;
+				position: absolute;
+				top: 0;
+				left: 0;
 			}
 			
 			/* Adaptivity */
@@ -430,17 +504,78 @@
 						<button type="button" id="contact-button" class="content-nav-button content-nav-button-right">Contact</button>
 					</div>
 				</div>
-
-				<svg id="follow-buttons" viewBox="0 0 400 100"></svg>
+				<div class="follow-buttons-container">
+					<div class="follow-buttons-inner-container">
+						<div class="social-button-png" type="button" id="blog-button">
+							<a class="link" href="https://ryanairth.blogspot.ie/" id="blog-link">
+								<img class="social-button-icon animated-button" alt="Blog Icon" src="images/Buttons/SocialButtonsBlog.png">
+							</a>
+						</div>
+						<div class="social-button-png" type="button" id="github-button">
+							<a class="link" href="https://github.com/bogieman987" id="github-link">
+								<img class="social-button-icon animated-button" alt="Github Logo" src="images/Buttons/SocialButtonsGithub.png">
+							</a>
+						</div>
+						<div class="social-button-png" type="button" id="linked-in-button">
+							<a class="link" href="https://www.linkedin.com/in/RyanAirth" id="linked-in-link">
+								<img class="social-button-icon animated-button" alt="LinkedIn Logo" src="images/Buttons/SocialButtonsLinkedIn.png">
+							</a>
+						</div>
+						<div class="social-button-png" type="button" id="twitter-button">
+							<a class="link" href="https://twitter.com/bogieman987" id="twitter-link">
+								<img class="social-button-icon animated-button" alt="Twitter Logo" src="images/Buttons/SocialButtonsTwitter.png">
+							</a>
+						</div>
+						<div class="social-button-png" type="button" id="google-plus-button">
+							<a class="link" href="https://plus.google.com/u/0/+RyanAirth987" id="google-plus-link">
+								<img class="social-button-icon animated-button" alt="Google Plus Logo" src="images/Buttons/SocialButtonsGooglePlus.png">
+							</a>
+						</div>
+					</div>
+				</div>
 			</nav>
 		</div>
-
+		<svg id="filters" viewBox="0 0 0 0">
+			<defs>
+				<filter id="drop-shadow">
+					<feGaussianBlur in="SourceAlpha" stdDeviation="10"/>
+					<feOffset dx="0" dy="10" result="offsetblur"/>
+					<feFlood flood-color="rgba(0,0,0,0.5)"/>
+					<feComposite in2="offsetblur" operator="in"/>
+					<feMerge>
+						<feMergeNode/>
+						<feMergeNode in="SourceGraphic"/>
+					</feMerge>
+				</filter>
+				<filter id="drop-shadow-snap">
+					<feGaussianBlur in="SourceAlpha" stdDeviation="-1"/>
+					<feOffset dx="0" dy="0" result="offsetblur"></feOffset>
+					<feFlood flood-color="#000000"></feFlood>
+					<feComposite in2="offsetblur" operator="in"></feComposite>
+					<feComponentTransfer>
+						<feFuncA type="linear" slope="3"></feFuncA>
+					</feComponentTransfer>
+					<feMerge>
+						<feMergeNode></feMergeNode>
+						<feMergeNode in="SourceGraphic"></feMergeNode>
+					</feMerge>
+				</filter>
+			</defs>
+		</svg>
 		<div id="hidden-content">
+			<!-- SVG elements -->
+			<svg id="follow-buttons" viewBox="0 0 400 100"></svg>
+			<svg id="back-arrow" viewBox="0 0 64 64"></svg>
+			<!-- End of SVG elements -->
+
 			<div id="projects-content" class="portfolio-content">
 				<header class="content-subheader">
 					<div class="content-subheader-projects">		
-						<svg id="back-arrow" viewBox="0 0 64 64"></svg>
-						<!-- <img id="back-arrow" class="image-icon" src="images/BackArrow.png"> -->
+						<div class="project-back-arrow-container">
+							<div class="project-back-arrow-inner-container">
+								<img style="display: block;" class="project-back-arrow animated-button" alt="Back Arrow to all Projects" src="images/Buttons/ArrowLeft.png" id="back-arrow">
+							</div>	
+						</div>
 						<h2 class="project-name">Projects</h2>
 					</div>
 				</header>
@@ -453,7 +588,7 @@
 						</header>
 						<figure>
 							<div class="project-preview-image-container">
-								<img class="project-preview-image" src="images/Resources/calc.png" alt="Picture of a simple caclulator">
+								<img class="project-preview-image" src="images/Projects/calc.png" alt="Picture of a simple caclulator">
 							</div>
 							<!-- <img class="project-preview-image" src="" alt="Picture of a simple caclulator"> -->
 							<figcaption class="project-preview-description">A simple Android calculator app created for the purpose of learning how to make an Android application</figcaption>
@@ -466,7 +601,7 @@
 						</header>
 						<figure>
 							<div class="project-preview-image-container">
-								<img class="project-preview-image" src="images/Resources/bullsandcows.png" alt="Picture of a text based game with graphics made from text characters">
+								<img class="project-preview-image" src="images/Projects/bullsandcows.png" alt="Picture of a text based game with graphics made from text characters">
 							</div>
 							<figcaption class="project-preview-description">A command line game made in C++, created as part of an online course in learning how to program in C++</figcaption>
 						</figure>
@@ -521,21 +656,21 @@
 						<div class="gallery-container">
 							<!-- Scroll left arrow -->
 							<div class="gallery-current-image-container">
-								<img class="gallery-current-image calc" src="images/Resources/calc.png" alt="Picture 1 of a simple caclulator">
+								<img class="gallery-current-image calc" src="images/Projects/calc.png" alt="Picture 1 of a simple caclulator">
 							</div>	
 							<!-- Scroll right arrow -->
 							<div class="gallery-previews-container">
-								<div class="gallery-preview-image calc gallery-preview-current">
-									<img class="calc" src="images/Resources/calc.png" alt="Picture 1 of a simple caclulator">
+								<div class="gallery-preview-image calc gallery-preview-current content-nav-button-left">
+									<img class="calc" src="images/Projects/calc.png" alt="Picture 1 of a simple caclulator">
 								</div>
 								<div class="gallery-preview-image calc">
-									<img class="calc" src="images/Resources/calc2.png" alt="Picture 2 of a simple caclulator">
+									<img class="calc" src="images/Projects/calc2.png" alt="Picture 2 of a simple caclulator">
 								</div>
 								<div class="gallery-preview-image calc">
-									<img class="calc" src="images/Resources/calc3.png" alt="Picture 3 of a simple caclulator">
+									<img class="calc" src="images/Projects/calc3.png" alt="Picture 3 of a simple caclulator">
 								</div>
-								<div class="gallery-preview-image calc">
-									<img class="calc" src="images/Resources/calc4.png" alt="Picture 4 of a simple caclulator">
+								<div class="gallery-preview-image calc content-nav-button-right">
+									<img class="calc" src="images/Projects/calc4.png" alt="Picture 4 of a simple caclulator">
 								</div>
 							</div>
 						</div>
@@ -574,22 +709,22 @@
 						<div class="gallery-container">
 							<!-- Scroll left arrow -->
 							<div class="gallery-current-image-container">
-								<img class="gallery-current-image bulls" src="" alt="Picture 1 of a Bulls and Cows game">
+								<img class="gallery-current-image bulls" src="images/Projects/bullsandcows.png" alt="Picture 1 of a Bulls and Cows game">
 							</div>	
 							<!-- Scroll right arrow -->
 							<div class="gallery-previews-container">
-								<div class="gallery-preview-image bulls gallery-preview-current">
-									<img class="bulls" src="" alt="Picture 1 of a Bulls and Cows game">
+								<div class="gallery-preview-image bulls gallery-preview-current content-nav-button-left">
+									<img class="bulls" src="images/Projects/bullsandcows.png" alt="Picture 1 of a Bulls and Cows game">
 								</div>
 								<div class="gallery-preview-image bulls">
-									<img class="bulls" src="" alt="Picture 2 of a Bulls and Cows game">
+									<img class="bulls" src="images/Projects/bullsandcows2.png" alt="Picture 2 of a Bulls and Cows game">
 								</div>
-								<div class="gallery-preview-image bulls">
+								<!-- <div class="gallery-preview-image bulls">
 									<img class="bulls" src="" alt="Picture 3 of a Bulls and Cows game">
 								</div>
-								<div class="gallery-preview-image bulls">
+								<div class="gallery-preview-image bulls content-nav-button-right">
 									<img class="bulls" src="" alt="Picture 4 of a Bulls and Cows game">
-								</div>
+								</div> -->
 							</div>
 						</div>
 					</section>
