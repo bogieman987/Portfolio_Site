@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<title>Ryan Sweeney Portfolio</title>
@@ -14,9 +14,6 @@
 				color: white;
 				background-color: #1c54c7;
 				overflow-x: hidden;
-			}
-			article {
-				text-align: left;
 			}
 			h1, h2, h3, h4 {
 				font-family: 'Work Sans', sans-serif;
@@ -452,7 +449,31 @@
 				top: 0;
 				left: 0;
 			}
-			
+			/* Loading */
+			#loader {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-color: #1c54c7;
+			}
+			.loader-spinner {
+				width: 64px;
+				height: 64px;
+				border: 16px solid white;
+				border-left: 16px solid transparent;
+				border-right: 16px solid transparent;
+				border-radius: 50%;
+				margin: 200px auto 0 auto;
+				
+				animation: rotate 2s linear infinite;
+				/*transform: translate(-50%, -50%);*/
+			}
+			@keyframes rotate {
+				0% { transform: rotate(0deg); }
+  				100% { transform: rotate(360deg); }
+			}
 			/* Adaptivity */
 			@media only screen and (max-width: 840px) {
 
@@ -464,18 +485,21 @@
 		<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> 
 	</head>
 	<body>
-		<div class="main-container">
+		<div id="loader">
+			<div class="loader-spinner"></div>
+		</div>
+		<div class="main-container" style="display:none">
 			<main class="content-container">
-				<div id="about-content" class="portfolio-content">
+				<article id="about-content" class="portfolio-content">
 					<header class="content-subheader">
 						<h2>Ryan Sweeney</h2>
 						<p>("Airth" is my unofficial surname)</p>
 					</header>
-					<article class="about-multicol">
-						<section class="info-box about-multicol-col">
+					<div class="about-multicol">
+						<div class="info-box about-multicol-col">
 							<img id="photo" class="image-small" src="images/Logos/BlogIcon.png" alt="Photograph">
 							<p>I'm a 21 year old aspiring programmer from Co.Donegal, Republic of Ireland.<br><br>My life goal is to own a game development studio however I want to work in other parts of the industry before that.<br>For example: web development or even a little indie title or two along the way.</p>
-						</section>
+						</div>
 						<div class="vert-rule"></div>
 						<section class="info-box about-multicol-col">
 							<h3>Languages I Actively Use</h3>
@@ -492,9 +516,9 @@
 								<li>SQL</li>
 							</ul>
 						</section>
-					</article>
+					</div>
 					<h3><a class="portfolio-link" href="http://www.mediafire.com/download/6jlczxu2i5ltl3u/RyanCV.doc">Click to download CV</a></h3>
-				</div>	
+				</article>	
 			</main>	
 			<nav class="nav-follow-buttons-container">
 				<div class="content-nav-container">
@@ -506,27 +530,27 @@
 				</div>
 				<div class="follow-buttons-container">
 					<div class="follow-buttons-inner-container">
-						<div class="social-button-png" type="button" id="blog-button">
+						<div class="social-button-png" id="blog-button">
 							<a class="link" href="https://ryanairth.blogspot.ie/" id="blog-link">
 								<img class="social-button-icon animated-button" alt="Blog Icon" src="images/Buttons/SocialButtonsBlog.png">
 							</a>
 						</div>
-						<div class="social-button-png" type="button" id="github-button">
+						<div class="social-button-png" id="github-button">
 							<a class="link" href="https://github.com/bogieman987" id="github-link">
 								<img class="social-button-icon animated-button" alt="Github Logo" src="images/Buttons/SocialButtonsGithub.png">
 							</a>
 						</div>
-						<div class="social-button-png" type="button" id="linked-in-button">
+						<div class="social-button-png" id="linked-in-button">
 							<a class="link" href="https://www.linkedin.com/in/RyanAirth" id="linked-in-link">
 								<img class="social-button-icon animated-button" alt="LinkedIn Logo" src="images/Buttons/SocialButtonsLinkedIn.png">
 							</a>
 						</div>
-						<div class="social-button-png" type="button" id="twitter-button">
+						<div class="social-button-png" id="twitter-button">
 							<a class="link" href="https://twitter.com/bogieman987" id="twitter-link">
 								<img class="social-button-icon animated-button" alt="Twitter Logo" src="images/Buttons/SocialButtonsTwitter.png">
 							</a>
 						</div>
-						<div class="social-button-png" type="button" id="google-plus-button">
+						<div class="social-button-png" id="google-plus-button">
 							<a class="link" href="https://plus.google.com/u/0/+RyanAirth987" id="google-plus-link">
 								<img class="social-button-icon animated-button" alt="Google Plus Logo" src="images/Buttons/SocialButtonsGooglePlus.png">
 							</a>
@@ -565,7 +589,7 @@
 		<div id="hidden-content">
 			<!-- SVG elements -->
 			<svg id="follow-buttons" viewBox="0 0 400 100"></svg>
-			<svg id="back-arrow" viewBox="0 0 64 64"></svg>
+			<!-- <svg id="back-arrow" viewBox="0 0 64 64"></svg> -->
 			<!-- End of SVG elements -->
 
 			<div id="projects-content" class="portfolio-content">
@@ -614,12 +638,10 @@
 				{content}
 			</div>
 
-			<img id="background-image" src="images/Background.png">
-
 			<!-- Add projects here -->
 			<div id="projects">					
 				<!-- Math Sheet Calculator-->
-				<article id="math-sheet-calculator" class="projects-multicol" >
+				<div id="math-sheet-calculator" class="projects-multicol" >
 					<section class="projects-info-box projects-multicol-col">
 						<header>
 							<h3><a class="portfolio-link" href="https://github.com/bogieman987/Math_Sheet_Calculator">Math Sheet Calculator - Github</a></h3>
@@ -651,7 +673,7 @@
 						</article>
 					</section>
 					<div class="vert-rule"></div>
-					<section class="projects-info-box projects-multicol-col">
+					<div class="projects-info-box projects-multicol-col">
 						<!-- Example pictures go here-->
 						<div class="gallery-container">
 							<!-- Scroll left arrow -->
@@ -674,11 +696,11 @@
 								</div>
 							</div>
 						</div>
-					</section>
-				</article>
+					</div>
+				</div>
 
 				<!-- Bulls and Cows -->
-				<article id="bulls-and-cows" class="projects-multicol">
+				<div id="bulls-and-cows" class="projects-multicol">
 					<section class="projects-multicol-col projects-multicol-col">
 						<header>
 							<h3><a class="portfolio-link" href="https://github.com/bogieman987/Bulls_and_Cows">Bulls and Cows - Github</a></h3>
@@ -704,7 +726,7 @@
 						</article>
 					</section>
 					<div class="vert-rule"></div>
-					<section class="projects-info-box projects-multicol-col">
+					<div class="projects-info-box projects-multicol-col">
 						<!-- Example pictures go here-->
 						<div class="gallery-container">
 							<!-- Scroll left arrow -->
@@ -727,8 +749,8 @@
 								</div> -->
 							</div>
 						</div>
-					</section>
-				</article>
+					</div>
+				</div>
 			</div>
 		</div>
 		

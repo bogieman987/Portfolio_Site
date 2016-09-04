@@ -243,7 +243,6 @@ function loadBackArrowPNG() {
 	var backArrowContainer = document.createElement("div");
 
 
-
 	var backArrow = document.createElement("img");
 
 	$(backArrow).attr({
@@ -269,9 +268,11 @@ function animateShadow(value, filter) {
 
 function setUpBackgroundImage() {
 	var backgroundWidth = screen.innerWidth,
-		backgroundHeight = backgroundWidth * 0.75;
-	
-	$("#background-image").ready(function() {
+		backgroundHeight = backgroundWidth * 0.75,
+		bgImage = document.createElement("img");
+
+	$(bgImage).appendTo($("body")).css({"display":"none"}).attr({"src": "images/Background.png", "id": "bg-image"}).on("load", function() {
+		$("#bg-image").remove();
 		$("body").css({
 			"background": "url(images/Background.png)",
 			"background-repeat": "no-repeat",	
@@ -282,7 +283,25 @@ function setUpBackgroundImage() {
 			"height": "100%"
 		});
 		$("#background-image").remove();
+		console.log("setting bg on load");
+		removeLoadingScreen(100);
+	}).on("error", function() {
+		$("#bg-image").remove();
+		$("body").css({
+			"background": "#1c54c7"
+		});
+		console.log("setting bg on error");
+		removeLoadingScreen(0);
 	});
+}
+
+function removeLoadingScreen(miliseconds) {
+	setTimeout(function() {
+		$("#loader").remove();
+		$(".main-container").css({
+			"display":"block"
+		});
+	}, miliseconds);
 }
 
 function getBackgroundDimentions() {
