@@ -7,7 +7,7 @@
 		<meta name="keywords" content="HTML,CSS,JavaScript,Java,Android">
 		<meta name="author" content="Ryan Sweeney">
 
-		<style type="text/css">					
+		<style type="text/css">		
 			body {
 				margin: 0 0;
 				text-align: center;
@@ -53,7 +53,7 @@
 			}
 			/* General content */
 			.content-container {
-				width: 1000px;
+				width: 100%;
 				height: 560px;
 				overflow: hidden;
 				margin: 0 auto 10px auto;
@@ -62,6 +62,7 @@
 				height: 100%;
 				min-height: 550px;
 				overflow-y: hidden;
+				overflow-x: hidden;
 			}
 			.content-subheader {
 				margin-bottom: 20px;
@@ -73,15 +74,15 @@
 			.vert-rule {
 				width: 0;
 				height: 99%;
-				margin: auto 1%;
 				border: 1px solid white;
 				float: left;
 			}
 			.about-multicol {
-				width: 75%;
-				height: 55%;
+				width: 750px;
+				height: 60%;
 				min-height: 310px;
 				margin: 0 auto;
+				padding: 0 10px;
 			}
 			.about-multicol-col {
 				width: 48%;
@@ -89,6 +90,7 @@
 				float: left;
 			}
 			.info-box {
+				margin: 0 7px;
 				font-family: 'Abel', sans-serif;
 				font-size: 1.25em;
 				text-align: left;
@@ -149,7 +151,8 @@
 			.projects-selector {
 				width: 100%;
 				max-height: 85%;
-				overflow-y: auto;
+				overflow-y: hidden;
+				padding: 0 10%;
 			}
 			.project-preview {
 				width: 250px;
@@ -195,7 +198,9 @@
 				margin: 10px auto;
 			}
 			.projects-multicol {
+				width: 990px;
 				height: 80%;
+				margin: 0 auto;
 			}
 			.projects-multicol-col {
 				width: 48%;
@@ -203,7 +208,9 @@
 				float: left;
 			}
 			.projects-info-box {
+				width: 480px;
 				height: 100%;
+				margin: 0 7px;
 				font-family: 'Abel', sans-serif;
 				text-align: left;
 			}
@@ -247,7 +254,7 @@
 				width: 22.1%;
 				height: 95%;
 				float: left;
-				margin: 0 5px;
+				margin: 0 4px;
 				border: 2px solid transparent;
 				background-color: rgba(0, 0, 0, 0.25);
 				overflow: hidden;
@@ -485,12 +492,12 @@
 		<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> 
 	</head>
 	<body>
-		<div id="loader">
+		<!-- <div id="loader">
 			<div class="loader-spinner"></div>
-		</div>
-		<div class="main-container" style="display:none">
+		</div> -->
+		<div class="main-container" style="display:block">
 			<main class="content-container">
-				<article id="about-content" class="portfolio-content">
+				<div id="about-content" class="portfolio-content">
 					<header class="content-subheader">
 						<h2>Ryan Sweeney</h2>
 						<p>("Airth" is my unofficial surname)</p>
@@ -499,6 +506,7 @@
 						<div class="info-box about-multicol-col">
 							<img id="photo" class="image-small" src="images/Logos/BlogIcon.png" alt="Photograph">
 							<p>I'm a 21 year old aspiring programmer from Co.Donegal, Republic of Ireland.<br><br>My life goal is to own a game development studio however I want to work in other parts of the industry before that.<br>For example: web development or even a little indie title or two along the way.</p>
+							<p>Note: Still a bit of work to make this site look correctly accross all browsers!</p>
 						</div>
 						<div class="vert-rule"></div>
 						<section class="info-box about-multicol-col">
@@ -518,7 +526,7 @@
 						</section>
 					</div>
 					<h3><a class="portfolio-link" href="http://www.mediafire.com/download/6jlczxu2i5ltl3u/RyanCV.doc">Click to download CV</a></h3>
-				</article>	
+				</div>	
 			</main>	
 			<nav class="nav-follow-buttons-container">
 				<div class="content-nav-container">
@@ -701,7 +709,7 @@
 
 				<!-- Bulls and Cows -->
 				<div id="bulls-and-cows" class="projects-multicol">
-					<section class="projects-multicol-col projects-multicol-col">
+					<section class="projects-info-box projects-multicol-col">
 						<header>
 							<h3><a class="portfolio-link" href="https://github.com/bogieman987/Bulls_and_Cows">Bulls and Cows - Github</a></h3>
 						</header>
@@ -738,15 +746,9 @@
 								<div class="gallery-preview-image bulls gallery-preview-current content-nav-button-left">
 									<img class="bulls" src="images/Projects/bullsandcows.png" alt="Picture 1 of a Bulls and Cows game">
 								</div>
-								<div class="gallery-preview-image bulls">
+								<div class="gallery-preview-image bulls content-nav-button-right">
 									<img class="bulls" src="images/Projects/bullsandcows2.png" alt="Picture 2 of a Bulls and Cows game">
 								</div>
-								<!-- <div class="gallery-preview-image bulls">
-									<img class="bulls" src="" alt="Picture 3 of a Bulls and Cows game">
-								</div>
-								<div class="gallery-preview-image bulls content-nav-button-right">
-									<img class="bulls" src="" alt="Picture 4 of a Bulls and Cows game">
-								</div> -->
 							</div>
 						</div>
 					</div>

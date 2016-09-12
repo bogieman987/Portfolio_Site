@@ -1,65 +1,4 @@
-$(document).ready(function() {
-	// Try and load SVGs, if fail load PNGs if fail, use ugly buttons or something to maintain functionality
-	/*try {
-		console.log("Setting up filters");
-
-		setUpSVGFilters();
-
-		console.log("Filters set up successfully");
-
-		try {
-			console.log("Loading SVG social buttons");
-
-			loadFollowButtonsSVG();	
-
-			console.log("SVG social buttons loaded successfully");
-		} catch(err) {
-			console.log(err);
-			console.log("Failed to load SVG social buttons");
-			try {
-				console.log("Loading PNG social buttons");
-
-				loadFollowButtonsPNG();
-
-				console.log("PNG social buttons loaded successfully");
-			} catch(err) {
-				console.log(err);
-				console.log("Failed to load PNG social buttons");
-			}
-		}
-		try {
-			console.log("Loading SVG back arrow button");
-
-			loadBackArrowSVG();
-
-			console.log("SVG back arrow button loaded successfully");
-		} catch(err) {
-			console.log(err);
-			console.log("Failed to load SVG back arrow button");
-			try {
-				console.log("Loading PNG back arrow button");
-
-				loadBackArrowPNG();
-
-				console.log("PNG back arrow button loaded successfully");
-			} catch(err) {
-				console.log(err);
-				console.log("Failed to load back arrow button");
-			}
-		}
-	} catch(err) {
-		try {
-			loadFollowButtonsPNG();
-		} catch(err) {
-
-		}
-		try {
-			loadBackArrowPNG();
-		} catch(err) {
-			
-		}
-	}*/
-	
+$(document).ready(function() {	
 	setUpButtons();
 	setUpProjectButtons();
 	setUpGalleryButtons();
@@ -69,57 +8,6 @@ $(document).ready(function() {
 $(window).resize(function() {
 	resizeBackgroundImage();
 });
-
-function setUpSVGFilters() {
-	var draw = Snap("#filters");
-	draw.filter(Snap.filter.shadow(0, 0, -1, 3));
-	draw.filter(Snap.filter.shadow(0, 0, -1, 0));
-}
-
-function loadFollowButtonsSVG() {
-	// Main SVG drawing area
-	var svgId = "#follow-buttons",
-		draw = Snap(svgId);
-	// Filenames
-	var followButtons = Snap.load("images/SVG/FollowButtonsSmall1.svg", function(fragment) {
-		//draw.append(fragment);	
-		draw.append(fragment);
-		/*draw.filter(Snap.filter.shadow(0, 0, -1, 3));
-		draw.filter(Snap.filter.shadow(0, 0, -1, 0));*/
-
-		var buttons = Snap.selectAll("#follow-buttons-svg > .svg-button"),
-			scale = 1,
-			timeUp = 150,
-			timeDown = 250,
-			transformUp = "t0,0s" + (scale + 0.1),
-			transformDown = "t0,0s" + scale;	
-
-		for (var i = 0; i < buttons.length; i++) {
-			buttons[i].transform("t0,0s" + scale);
-			//Snap animation values: from, to, setter, duration, [easing], [callback]
-			buttons[i].hover(function(event) {
-				var shadow = Snap($("#filters")[0]).selectAll("filter")[0];
-				
-				this.animate({transform: transformUp}, timeUp);
-				this.attr({filter: shadow});
-
-				Snap.animate(0, 100, function(value) {animateShadow(value, shadow)}, timeUp);
-			}, function(event) {
-				var shadow = Snap($("#filters")[0]).selectAll("filter")[0],
-				noShadow = Snap($("#filters")[0]).selectAll("filter")[1];
-
-				this.animate({transform: transformDown}, timeDown, mina.bounce);
-
-				var element = this;
-				Snap.animate(100, 0, function(value) {animateShadow(value, shadow)}, timeDown, mina.bounce, function() {
-					element.attr({filter: noShadow});
-				});
-			});
-		}	
-	});
-
-	$("#follow-buttons").appendTo($(".follow-buttons-container"));
-}
 
 function loadFollowButtonsPNG() {
 	var innerContainer = document.createElement("div");
@@ -203,42 +91,6 @@ function loadFollowButtonsPNG() {
 		}).addClass("social-button-icon").appendTo($("#google-plus-link"));
 }
 
-function loadBackArrowSVG() {
-	var svgId = "#back-arrow";
-	var draw = Snap(svgId);
-	Snap.load("images/SVG/ArrowSmall1.svg", function(fragment) {
-		draw.append(fragment);
-
-		var button = Snap.selectAll("#arrow-svg > .svg-button"),
-			scale = 1,
-			timeUp = 150,
-			timeDown = 250,
-			transformUp = "t0,0s" + (scale + 0.1),
-			transformDown = "t0,0s" + scale;	
-
-		button[0].hover(function(event) {
-			var shadow = Snap($("#filters")[0]).selectAll("filter")[0];
-			
-			this.animate({transform: transformUp}, timeUp);
-			this.attr({filter: shadow});
-
-			Snap.animate(0, 100, function(value) {animateShadow(value, shadow)}, timeUp);
-		}, function(event) {
-			var shadow = Snap($("#filters")[0]).selectAll("filter")[0],
-			noShadow = Snap($("#filters")[0]).selectAll("filter")[1];
-
-			this.animate({transform: transformDown}, timeDown, mina.bounce);
-
-			var element = this;
-			Snap.animate(100, 0, function(value) {animateShadow(value, shadow)}, timeDown, mina.bounce, function() {
-				element.attr({filter: noShadow});
-			});
-		});
-	});
-
-	$("#back-arrow").css({"width": "64px", "height": "64px", "float": "left"}).appendTo($(".project-back-arrow-container"));
-}
-
 function loadBackArrowPNG() {
 	var backArrowContainer = document.createElement("div");
 
@@ -256,18 +108,8 @@ function animatePortfolioContentChange() {
 
 }
 
-function animateShadow(value, filter) {
-	/*On hover values: 	from--1, to-20, setter-(filter, node1, stdDeviation)
-						from-0, to-100, setter-(filter, node2, dy)
-						from-3, to-0.5, setter-(filter, node5, node1, slope)*/
-	filter.node.children[0].attributes[0].value = remap(value, 0, 100, -1, 2);
-	//filter.node.children[1].attributes[1].value = value / 5;
-	filter.node.children[1].attributes[1].value = remap(value, 0, 100, 0, 10);
-	filter.node.children[4].children[0].attributes[0].value = remap(value, 0, 100, 1, 0.5);
-}
-
 function setUpBackgroundImage() {
-	var backgroundWidth = screen.innerWidth,
+	var backgroundWidth = screen.width,
 		backgroundHeight = backgroundWidth * 0.75,
 		bgImage = document.createElement("img");
 
@@ -275,7 +117,7 @@ function setUpBackgroundImage() {
 		$("#bg-image").remove();
 		$("body").css({
 			"background": "url(images/Background.png)",
-			"background-repeat": "no-repeat",	
+			"background-repeat": "repeat-y",	
 			"background-size": backgroundWidth + "px " + backgroundHeight + "px",
 			"background-position": "center top",
 			"z-index": "1",
